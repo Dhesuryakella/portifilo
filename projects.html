@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects by Dhesurya Kella - Embedded Systems, AI/ML, and Computer Vision">
+    <title>Projects | Dhesurya Kella</title>
+
+    <link rel="stylesheet" href="design-system.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="professional-layout.css">
+    <link rel="stylesheet" href="simple-animations.css">
+    <link rel="stylesheet" href="professional-theme.css">
+    <link rel="stylesheet" href="realistic-icons.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="theme-toggle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">DK.</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h1>My Projects</h1>
+                <p>Exploring the intersection of embedded systems and artificial intelligence</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons text-center mb-2">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="ai">AI/ML & Computer Vision</button>
+                <button class="filter-btn" data-filter="robotics">Robotics & IoT</button>
+                <button class="filter-btn" data-filter="embedded">Embedded Systems</button>
+                <button class="filter-btn" data-filter="healthcare">Healthcare Electronics</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- AI/ML Projects -->
+                <div class="project-detail-card card fade-in-up" data-category="ai">
+                    <div class="project-header">
+                        <div class="project-icon ai-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div>
+                            <h3>Smart Stampede Detection & Prevention System</h3>
+                            <p class="project-subtitle">Real-Time Crowd Behavior Analytics</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Developed a comprehensive real-time crowd analytics system using YOLOv8 for person detection
+                        and ByteTrack for multi-object tracking. Designed four spatiotemporal heatmap models: position,
+                        path, dwell time, and velocity for identifying bottlenecks and high-risk zones.
+                    </p>
+                    <div class="project-highlights">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Achieved 30-50 FPS real-time performance on aerial and surveillance videos</li>
+                            <li>Implemented grid-based aggregation for hot-zone detection and flow analysis</li>
+                            <li>Built privacy-preserving tracking architecture with anonymous IDs</li>
+                            <li>Developed comprehensive analytics pipeline for safety monitoring</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">YOLOv8</span>
+                        <span class="tech-tag">ByteTrack</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Computer Vision</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Dhesuryakella" target="_blank" class="btn btn-outline btn-sm">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-detail-card card fade-in-up" data-category="ai">
+                    <div class="project-header">
+                        <div class="project-icon ml-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div>
+                            <h3>Cadastral Map OCR System</h3>
+                            <p class="project-subtitle">Domain-Specific Document AI</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Designed a domain-specific OCR pipeline for cadastral map documents using EasyOCR and OpenCV.
+                        Implemented multi-color text detection, fallback OCR strategies, and symbol recognition modules
+                        with configuration-driven detection pipelines.
+                    </p>
+                    <div class="project-highlights">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Achieved 95% text detection accuracy and 92% symbol detection precision</li>
+                            <li>Processed 63 annotated maps with 2-3 seconds average latency</li>
+                            <li>Built modular, reproducible experimental framework</li>
+                            <li>Generated structured JSON and Excel outputs for GIS analytics</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">EasyOCR</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">Pandas</span>
+                    </div>
+                </div>
+
+                <div class="project-detail-card card fade-in-up" data-category="ai">
+                    <div class="project-header">
+                        <div class="project-icon vision-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div>
+                            <h3>Crowd Prediction & Safety Monitoring</h3>
+                            <p class="project-subtitle">LSTM-Based Temporal Prediction</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Implemented YOLO-based detection with LSTM-based temporal prediction for crowd safety
+                        monitoring.
+                        Performed spatiotemporal feature extraction and behavioral pattern analysis with real-time
+                        dashboard visualization.
+                    </p>
+                    <div class="project-highlights">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Integrated YOLO detection with LSTM temporal modeling</li>
+                            <li>Developed Streamlit dashboard for real-time analytics</li>
+                            <li>Implemented spatiotemporal feature extraction pipeline</li>
+                            <li>Created behavioral pattern analysis algorithms</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">YOLO</span>
+                        <span class="tech-tag">LSTM</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">TensorFlow</span>
+                    </div>
+                </div>
+
+                <!-- Embedded Systems Projects -->
+                <div class="project-detail-card card fade-in-up" data-category="embedded">
+                    <div class="project-header">
+                        <div class="project-icon embedded-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div>
+                            <h3>ESP32 Multi-Node Communication System</h3>
+                            <p class="project-subtitle">Low-Latency Wireless Firmware</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Developed Embedded C firmware for ESP32 nodes enabling low-latency wireless communication using
+                        ESP-NOW protocol. Implemented comprehensive UART-based logging for debugging and performance
+                        validation.
+                    </p>
+                    <div class="project-highlights">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Debugged packet loss, synchronization errors, and timing mismatches</li>
+                            <li>Validated communication reliability through extensive testing</li>
+                            <li>Documented performance behavior and system limitations</li>
+                            <li>Optimized latency for real-time applications</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">ESP32</span>
+                        <span class="tech-tag">Embedded C</span>
+                        <span class="tech-tag">ESP-NOW</span>
+                        <span class="tech-tag">UART</span>
+                    </div>
+                </div>
+
+                <div class="project-detail-card card fade-in-up" data-category="robotics">
+                    <div class="project-header">
+                        <div class="project-icon robotics-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div>
+                            <h3>Robotic Localization & Control Firmware</h3>
+                            <p class="project-subtitle">Vision-Based Position Estimation</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Integrated IMU and vision sensor data using I2C and UART interfaces for position estimation.
+                        Developed firmware routines for sensor calibration, noise filtering, and control signal
+                        stability.
+                    </p>
+                    <div class="project-highlights">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Implemented sensor fusion algorithms for accurate localization</li>
+                            <li>Developed calibration routines for IMU drift compensation</li>
+                            <li>Applied noise filtering techniques for stable control</li>
+                            <li>Integrated with ROS for simulation validation</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">ESP32</span>
+                        <span class="tech-tag">MPU6050</span>
+                        <span class="tech-tag">I2C</span>
+                        <span class="tech-tag">Camera</span>
+                        <span class="tech-tag">ROS</span>
+                    </div>
+                </div>
+
+                <div class="project-detail-card card fade-in-up" data-category="robotics">
+                    <div class="project-header">
+                        <div class="project-icon hardware-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div>
+                            <h3>4DOF Robotic Arm Control System</h3>
+                            <p class="project-subtitle">Real-Time Servo Control</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Designed firmware for real-time servo motor control with feedback monitoring.
+                        Tested actuation accuracy and resolved jitter through timing optimization and signal filtering.
+                    </p>
+                    <div class="project-highlights">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Implemented PWM control for precise servo positioning</li>
+                            <li>Developed feedback monitoring for position verification</li>
+                            <li>Optimized timing to eliminate servo jitter</li>
+                            <li>Created kinematic control algorithms</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">ESP32</span>
+                        <span class="tech-tag">Servo Motors</span>
+                        <span class="tech-tag">PWM</span>
+                        <span class="tech-tag">Embedded C</span>
+                    </div>
+                </div>
+
+                <!-- NEW Robotics & IoT Projects -->
+                <div class="project-detail-card card fade-in-up" data-category="robotics">
+                    <div class="project-header">
+                        <div class="project-icon robotics-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div>
+                            <h3>WiFi Camera Car Control System</h3>
+                            <p class="project-subtitle">ESP32-CAM with Advanced Web Interface</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Developed an advanced WiFi-controlled car using ESP32-CAM with real-time video streaming.
+                        Features a professional web interface with glassmorphism design, WebSocket communication
+                        for low-latency control, and live camera feed with latency monitoring.
+                    </p>
+                    <div class="project-highlights">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Built custom HTML/CSS/JS web control interface with modern UI/UX</li>
+                            <li>Implemented dual WebSocket channels for camera streaming and car control</li>
+                            <li>Created PWM-based speed control with real-time slider adjustments</li>
+                            <li>Integrated LED light control with intensity adjustment</li>
+                            <li>Achieved smooth real-time video streaming with latency display</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">ESP32-CAM</span>
+                        <span class="tech-tag">Embedded C</span>
+                        <span class="tech-tag">WebSocket</span>
+                        <span class="tech-tag">Motor Control</span>
+                        <span class="tech-tag">HTML/CSS/JS</span>
+                    </div>
+                </div>
+
+                <div class="project-detail-card card fade-in-up" data-category="robotics">
+                    <div class="project-header">
+                        <div class="project-icon hardware-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div>
+                            <h3>Pan-Tilt Camera Control System</h3>
+                            <p class="project-subtitle">ESP32-CAM with Servo-Based Movement</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Extended the WiFi camera car with pan-tilt functionality using servo motors for 2-axis
+                        camera movement. Enables remote directional camera control synchronized with vehicle movement.
+                    </p>
+                    <div class="project-highlights">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Integrated dual-axis servo control for camera positioning</li>
+                            <li>Synchronized camera movement with vehicle direction</li>
+                            <li>Implemented smooth servo transitions for stable video</li>
+                            <li>Extended web interface with pan-tilt control buttons</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">ESP32-CAM</span>
+                        <span class="tech-tag">Servo Motors</span>
+                        <span class="tech-tag">PWM</span>
+                        <span class="tech-tag">Embedded C</span>
+                    </div>
+                </div>
+
+                <div class="project-detail-card card fade-in-up" data-category="robotics">
+                    <div class="project-header">
+                        <div class="project-icon embedded-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div>
+                            <h3>Joystick-Controlled Robot</h3>
+                            <p class="project-subtitle">ESP-NOW Wireless Communication</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built a wireless robot control system using ESP32 and ESP8266 with ESP-NOW protocol.
+                        Implemented joystick-based control with real-time data transmission for smooth, low-latency
+                        operation.
+                    </p>
+                    <div class="project-highlights">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Implemented ESP-NOW protocol for peer-to-peer communication</li>
+                            <li>Developed joystick analog input processing (X/Y axes)</li>
+                            <li>Created transmitter (ESP32) and receiver (ESP8266) firmware</li>
+                            <li>Achieved low-latency control with 100ms update rate</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">ESP32</span>
+                        <span class="tech-tag">ESP8266</span>
+                        <span class="tech-tag">ESP-NOW</span>
+                        <span class="tech-tag">Joystick Control</span>
+                    </div>
+                </div>
+
+                <!-- Healthcare Electronics Projects -->
+                <div class="project-detail-card card fade-in-up" data-category="healthcare">
+                    <div class="project-header">
+                        <div class="project-icon ml-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div>
+                            <h3>Health Monitoring System</h3>
+                            <p class="project-subtitle">MAX30102 Heart Rate & SpO2 Sensor</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Developed a real-time health monitoring system using MAX30102 sensor for continuous heart
+                        rate and blood oxygen saturation (SpO2) measurements. Implemented I2C communication and
+                        signal processing algorithms for accurate readings.
+                    </p>
+                    <div class="project-highlights">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Integrated MAX30102 sensor with I2C communication protocol</li>
+                            <li>Implemented IR signal detection for finger placement verification</li>
+                            <li>Developed heart rate and SpO2 calculation algorithms</li>
+                            <li>Created serial output for real-time monitoring display</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">MAX30102</span>
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">I2C</span>
+                        <span class="tech-tag">Healthcare IoT</span>
+                    </div>
+                </div>
+
+                <!-- General Embedded Systems Projects -->
+                <div class="project-detail-card card fade-in-up" data-category="embedded">
+                    <div class="project-header">
+                        <div class="project-icon vision-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div>
+                            <h3>ESP32 Video Streaming Application</h3>
+                            <p class="project-subtitle">Python-Based Video Capture & Recording</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Created a Python application to receive and record video streams from ESP32-CAM via serial
+                        communication. Implemented JPEG frame parsing and real-time video display with OpenCV.
+                    </p>
+                    <div class="project-highlights">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Developed serial communication parser for JPEG frame extraction</li>
+                            <li>Implemented real-time video display using OpenCV</li>
+                            <li>Created video recording functionality with codec optimization</li>
+                            <li>Built frame synchronization using JPEG markers (0xFFD8–0xFFD9)</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Serial Communication</span>
+                        <span class="tech-tag">ESP32-CAM</span>
+                    </div>
+                </div>
+
+                <div class="project-detail-card card fade-in-up" data-category="embedded">
+                    <div class="project-header">
+                        <div class="project-icon hardware-icon">
+                            <i class="fas fa-vote-yea"></i>
+                        </div>
+                        <div>
+                            <h3>Electronic Voting Machine (EVM) System</h3>
+                            <p class="project-subtitle">Arduino-Based Voting Solution</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built a functional electronic voting machine using Arduino with LCD display and button inputs.
+                        Features real-time vote counting, result calculation with percentages, and visual feedback
+                        using LED indicators.
+                    </p>
+                    <div class="project-highlights">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Developed secure voting logic with button debouncing</li>
+                            <li>Implemented real-time vote display on 16x2 LCD screen</li>
+                            <li>Created result calculation with percentage distribution</li>
+                            <li>Added LED visual feedback (green for vote recorded, red for results)</li>
+                            <li>Built winner determination algorithm with tie detection</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">LCD I2C</span>
+                        <span class="tech-tag">Embedded C</span>
+                        <span class="tech-tag">Digital Logic</span>
+                    </div>
+                </div>
+
+                <div class="project-detail-card card fade-in-up" data-category="embedded">
+                    <div class="project-header">
+                        <div class="project-icon embedded-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div>
+                            <h3>GPS Module Integration</h3>
+                            <p class="project-subtitle">Location Tracking System</p>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Integrated GPS module with Arduino for real-time location tracking and navigation applications.
+                        Implemented NMEA sentence parsing and serial communication for geographic data acquisition.
+                    </p>
+                    <div class="project-highlights">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Integrated GPS module with serial communication</li>
+                            <li>Implemented NMEA data parsing for coordinates</li>
+                            <li>Developed real-time location tracking functionality</li>
+                            <li>Created data logging for geographic information</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">GPS Module</span>
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">UART</span>
+                        <span class="tech-tag">NMEA Protocol</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publication Section -->
+            <div class="publication-section mt-2">
+                <h2 class="text-center mb-2">Research Publication</h2>
+                <div class="publication-card card fade-in-up">
+                    <div class="publication-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="publication-content">
+                        <h3>Comparative Evaluation of Communication Protocols with Vision-Based Localization</h3>
+                        <p class="authors">
+                            <strong>Sumukh Arood V, Dhesurya Kella, Mervin Joe Thomas</strong>
+                        </p>
+                        <p class="conference">
+                            IEEE International Conference on Robotics and Mechatronics (ICRM 2025)
+                        </p>
+                        <p class="publication-description">
+                            Conducted experimental evaluation of communication protocols (ESP-NOW, Wi-Fi, BLE)
+                            integrated with vision-based localization systems for multi-robot coordination.
+                            Performed simulation-driven validation using ROS 2 and Gazebo.
+                        </p>
+                        <div class="publication-status">
+                            <span class="status-badge">Accepted</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="theme-toggle.js"></script>
+</body>
+
+</html>
+
+<style>
+    .projects-section {
+        padding-top: 100px;
+        min-height: 100vh;
+    }
+
+    /* Filter Buttons */
+    .filter-buttons {
+        margin: 2rem 0;
+    }
+
+    .filter-btn {
+        padding: 0.75rem 1.5rem;
+        margin: 0.5rem;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        color: var(--text-light);
+        border-radius: var(--radius-md);
+        cursor: pointer;
+        font-weight: 500;
+        transition: var(--transition-normal);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+        background: var(--primary);
+        border-color: var(--primary);
+        transform: translateY(-2px);
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+        display: grid;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .project-detail-card {
+        padding: 2.5rem;
+    }
+
+    .project-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .project-icon {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--radius-sm);
+        font-size: 2rem;
+        flex-shrink: 0;
+    }
+
+    .ai-icon {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .ml-icon {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .vision-icon {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+
+    .embedded-icon {
+        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    }
+
+    .robotics-icon {
+        background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    }
+
+    .hardware-icon {
+        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    }
+
+    .project-subtitle {
+        color: var(--primary);
+        font-size: 0.95rem;
+        margin: 0;
+    }
+
+    .project-description {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+
+    .project-highlights {
+        margin: 1.5rem 0;
+    }
+
+    .project-highlights h4 {
+        color: var(--text-light);
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+    }
+
+    .project-highlights ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .project-highlights li {
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        line-height: 1.6;
+    }
+
+    .project-highlights li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: bold;
+    }
+
+    .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .tech-tag {
+        padding: 0.4rem 1rem;
+        background: var(--bg-card);
+        border: 1px solid var(--glass-border);
+        color: var(--text-light);
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+    .project-links {
+        margin-top: 1.5rem;
+    }
+
+    .btn-sm {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    /* Publication */
+    .publication-section {
+        margin-top: 4rem;
+    }
+
+    .publication-card {
+        display: flex;
+        gap: 2rem;
+        padding: 2.5rem;
+        align-items: flex-start;
+    }
+
+    .publication-icon {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--primary-gradient);
+        border-radius: var(--radius-sm);
+        font-size: 2.5rem;
+        flex-shrink: 0;
+    }
+
+    .publication-content h3 {
+        margin-bottom: 0.75rem;
+    }
+
+    .authors {
+        color: var(--text-muted);
+        margin-bottom: 0.5rem;
+    }
+
+    .conference {
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .publication-description {
+        line-height: 1.7;
+        margin-bottom: 1rem;
+    }
+
+    .status-badge {
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        background: var(--primary);
+        color: var(--text-light);
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+        .project-header {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .publication-card {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .filter-btn {
+            display: block;
+            width: 100%;
+            margin: 0.5rem 0;
+        }
+    }
+</style>

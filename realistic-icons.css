@@ -1,0 +1,163 @@
+/* ==================== REALISTIC 3D ICON STYLES ==================== */
+
+.card-icon,
+.project-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(30, 64, 175, 0.1));
+    border-radius: 20px;
+    padding: 1rem;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.card-icon i,
+.project-image i {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 4px 10px rgba(59, 130, 246, 0.3));
+    transition: all 0.3s ease;
+}
+
+.card-icon::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-icon::before,
+.project-card:hover .project-image::before {
+    opacity: 0.6;
+}
+
+.card:hover .card-icon,
+.project-card:hover .project-image {
+    transform: translateY(-5px) scale(1.1);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(30, 64, 175, 0.2));
+}
+
+.card:hover .card-icon i,
+.project-card:hover .project-image i {
+    transform: scale(1.1) rotateY(10deg);
+    filter: drop-shadow(0 6px 15px rgba(59, 130, 246, 0.5));
+}
+
+/* Specific icon animations */
+.fa-graduation-cap {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.fa-briefcase {
+    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.fa-award {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.fa-users {
+    background: linear-gradient(135deg, #ec4899, #db2777) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.fa-microchip {
+    background: linear-gradient(135deg, #06b6d4, #0891b2) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.fa-map {
+    background: linear-gradient(135deg, #f97316, #ea580c) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* Project card icon containers */
+.project-image {
+    height: 120px;
+    width: 120px;
+    margin: 1rem auto;
+}
+
+/* Add subtle rotation on hover */
+@keyframes icon-float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(5deg);
+    }
+}
+
+.card-icon:hover,
+.project-image:hover {
+    animation: icon-float 2s ease-in-out infinite;
+}
+
+/* Enhanced social icons */
+.social-link i {
+    color: #60a5fa;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover i {
+    color: #3b82f6;
+    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.6));
+}
+
+/* GitHub icon - adaptive styling */
+.fa-github {
+    color: var(--text) !important;
+}
+
+.social-link:hover .fa-github {
+    color: #ffffff !important;
+}
+
+/* LinkedIn icon */
+.fa-linkedin {
+    color: #0ea5e9 !important;
+}
+
+.social-link:hover .fa-linkedin {
+    color: #0284c7 !important;
+}
+
+/* Email icon */
+.fa-envelope {
+    color: #f59e0b !important;
+}
+
+.social-link:hover .fa-envelope {
+    color: #d97706 !important;
+}

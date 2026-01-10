@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Dhesurya Kella - Let's collaborate on your next project">
+    <title>Contact | Dhesurya Kella</title>
+
+    <link rel="stylesheet" href="design-system.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="professional-layout.css">
+    <link rel="stylesheet" href="simple-animations.css">
+    <link rel="stylesheet" href="professional-theme.css">
+    <link rel="stylesheet" href="realistic-icons.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="theme-toggle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">DK.</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h1>Get In Touch</h1>
+                <p>Let's discuss your next project or research collaboration</p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="contact-card card fade-in-up">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <a href="mailto:dhesuryak@gmail.com">dhesuryak@gmail.com</a>
+                    </div>
+
+                    <div class="contact-card card fade-in-up">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <a href="tel:+918897990490">+91 88979 90490</a>
+                    </div>
+
+                    <div class="contact-card card fade-in-up">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Vizianagaram, Andhra Pradesh<br>India</p>
+                    </div>
+
+                    <div class="contact-card card fade-in-up">
+                        <div class="contact-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Institution</h3>
+                        <p>MVGR College of Engineering<br>B.Tech ECE (2022-2026)</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container card fade-in-up">
+                    <h2>Send Me a Message</h2>
+                    <form id="contact-form" action="https://formspree.io/f/mqakqgrl" method="POST">
+                        <div class="form-group">
+                            <label for="name">
+                                <i class="fas fa-user"></i>
+                                Your Name
+                            </label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required
+                                autocomplete="name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Your Email
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required
+                                autocomplete="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">
+                                <i class="fas fa-tag"></i>
+                                Subject
+                            </label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Collaboration" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">
+                                <i class="fas fa-comment"></i>
+                                Message
+                            </label>
+                            <textarea id="message" name="message" rows="6"
+                                placeholder="Tell me about your project or idea..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+
+                    <div id="form-message" class="form-message" style="display: none;"></div>
+                </div>
+            </div>
+
+            <!-- Social Links Section -->
+            <div class="social-section">
+                <h2 class="text-center mb-2">Connect With Me</h2>
+                <div class="social-cards">
+                    <a href="https://github.com/Dhesuryakella" target="_blank" class="social-card card fade-in-up">
+                        <div class="social-icon github-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>Check out my code and projects</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+
+                    <a href="https://in.linkedin.com/in/dhesuryakella" target="_blank"
+                        class="social-card card fade-in-up">
+                        <div class="social-icon linkedin-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p>Connect professionally</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+
+                    <a href="mailto:dhesuryak@gmail.com" class="social-card card fade-in-up">
+                        <div class="social-icon email-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>Direct message</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Availability Section -->
+            <div class="availability-section card text-center fade-in-up">
+                <div class="availability-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Currently Available For</h2>
+                <div class="availability-list">
+                    <div class="availability-item">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Embedded Systems Internships</span>
+                    </div>
+                    <div class="availability-item">
+                        <i class="fas fa-flask"></i>
+                        <span>Research Collaborations</span>
+                    </div>
+                    <div class="availability-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Freelance Projects</span>
+                    </div>
+                    <div class="availability-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Full-Time Opportunities (May 2026)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="theme-toggle.js"></script>
+</body>
+
+</html>
+
+<style>
+    .contact-section {
+        padding-top: 100px;
+        padding-bottom: 4rem;
+    }
+
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+        margin: 3rem 0;
+    }
+
+    /* Contact Info */
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+        text-align: center;
+        transition: var(--transition-normal);
+    }
+
+    .contact-card:hover {
+        transform: translateX(10px);
+    }
+
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--primary-gradient);
+        border-radius: 50%;
+        font-size: 1.5rem;
+    }
+
+    .contact-card h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    .contact-card a {
+        color: var(--text-muted);
+        transition: var(--transition-fast);
+    }
+
+    .contact-card a:hover {
+        color: var(--primary);
+    }
+
+    .contact-card p {
+        color: var(--text-muted);
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    /* Contact Form */
+    .contact-form-container {
+        padding: 3rem;
+    }
+
+    .contact-form-container h2 {
+        margin-bottom: 2rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--text-light);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .form-group label i {
+        color: var(--primary);
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 1rem;
+        background: var(--bg-card);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-sm);
+        color: var(--text-light);
+        font-family: inherit;
+        font-size: 1rem;
+        transition: var(--transition-fast);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .btn-full {
+        width: 100%;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .form-message {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        border-radius: var(--radius-sm);
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .form-message.success {
+        background: rgba(34, 197, 94, 0.1);
+        border: 1px solid rgba(34, 197, 94, 0.3);
+        color: #22c55e;
+    }
+
+    .form-message.error {
+        background: rgba(239, 68, 68, 0.1);
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        color: #ef4444;
+    }
+
+    /* Social Section */
+    .social-section {
+        margin: 4rem 0;
+    }
+
+    .social-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .social-card {
+        padding: 2.5rem;
+        text-align: center;
+        position: relative;
+        transition: var(--transition-normal);
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .social-card:hover {
+        transform: translateY(-8px);
+    }
+
+    .social-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 2.5rem;
+        transition: var(--transition-normal);
+    }
+
+    .github-icon {
+        background: linear-gradient(135deg, #24292e 0%, #000 100%);
+    }
+
+    .linkedin-icon {
+        background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%);
+    }
+
+    .email-icon {
+        background: linear-gradient(135deg, #ea4335 0%, #fbbc05 100%);
+    }
+
+    .social-card:hover .social-icon {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    .social-card h3 {
+        margin-bottom: 0.5rem;
+    }
+
+    .social-card p {
+        margin: 0;
+    }
+
+    .link-arrow {
+        position: absolute;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.5rem;
+        color: var(--primary);
+        transition: var(--transition-fast);
+    }
+
+    .social-card:hover .link-arrow {
+        transform: translateX(5px);
+    }
+
+    /* Availability Section */
+    .availability-section {
+        padding: 3rem;
+        margin-top: 3rem;
+    }
+
+    .availability-icon {
+        font-size: 3rem;
+        color: #22c55e;
+        margin-bottom: 1rem;
+    }
+
+    .availability-section h2 {
+        margin-bottom: 2rem;
+    }
+
+    .availability-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .availability-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: var(--bg-card);
+        border-radius: var(--radius-sm);
+        transition: var(--transition-fast);
+    }
+
+    .availability-item:hover {
+        background: var(--bg-card-hover);
+        transform: translateX(5px);
+    }
+
+    .availability-item i {
+        font-size: 1.5rem;
+        color: var(--primary);
+    }
+
+    .availability-item span {
+        font-size: 1rem;
+        color: var(--text-light);
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+        .contact-content {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-form-container {
+            padding: 2rem;
+        }
+
+        .availability-list {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

@@ -1,0 +1,315 @@
+/* ==================== PROFESSIONAL LAYOUT REFINEMENTS ==================== */
+
+/* Container Improvements */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--space-4);
+    }
+}
+
+/* Section Spacing */
+section {
+    padding: var(--space-12) 0;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: var(--space-8) 0;
+    }
+}
+
+/* Hero Section - Better Layout */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: var(--space-10) 0;
+}
+
+.hero-content-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: var(--space-8);
+    align-items: center;
+}
+
+.profile-image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-greeting {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-medium);
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+    display: block;
+}
+
+.hero-title {
+    font-size: var(--font-size-6xl);
+    margin-bottom: var(--space-3);
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+}
+
+.hero-description {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: var(--text-muted);
+    margin-bottom: var(--space-5);
+}
+
+/* Skill Badges - Cleaner */
+.skills-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: var(--space-5) 0;
+}
+
+.skill-badge-large {
+    padding: var(--space-2) var(--space-3);
+    background: rgba(37, 99, 235, 0.1);
+    border: 1.5px solid rgba(37, 99, 235, 0.3);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary);
+    transition: all var(--transition-base);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.skill-badge-large:hover {
+    background: rgba(37, 99, 235, 0.15);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+/* Buttons - Professional */
+.hero-buttons {
+    display: flex;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+}
+
+.btn {
+    padding: var(--space-3) var(--space-5);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-semibold);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-dark);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* Cards - Clean and Elevated */
+.card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.05));
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.section-title h2 {
+    margin-bottom: var(--space-2);
+}
+
+.section-title p {
+    font-size: var(--font-size-lg);
+    color: var(--text-muted);
+}
+
+/* CTA Section */
+.cta-section {
+    padding: var(--space-12) 0;
+    background: var(--bg-secondary);
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--space-3);
+}
+
+.cta-content p {
+    font-size: var(--font-size-lg);
+    color: var(--text-muted);
+    margin-bottom: var(--space-5);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    margin-bottom: var(--space-5);
+}
+
+.cta-social {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+}
+
+/* Grid Improvements */
+.grid {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Project Cards */
+.project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card .card-icon {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--space-3);
+    display: inline-block;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin-top: var(--space-3);
+}
+
+.tag,
+.tech-badge {
+    padding: var(--space-1) var(--space-2);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+}
+
+.social-link {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+}
+
+.social-link:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+    .hero-content-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-6);
+    }
+
+    .hero-text {
+        order: 2;
+    }
+
+    .profile-image-container {
+        order: 1;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .skills-showcase {
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
