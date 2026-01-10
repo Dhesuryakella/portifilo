@@ -35,13 +35,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Toggle Chat Window
     chatBubble.addEventListener('click', () => {
         chatWindow.classList.toggle('active');
+        document.body.classList.toggle('chat-open'); // Toggle chat-open class on body
         if (chatWindow.classList.contains('active')) {
             chatInput.focus();
+            messagesArea.scrollTop = messagesArea.scrollHeight; // Scroll to bottom on open
         }
     });
 
     closeBtn.addEventListener('click', () => {
         chatWindow.classList.remove('active');
+        document.body.classList.remove('chat-open'); // Ensure chat-open is removed when closing
     });
 
     // Auto-responses
