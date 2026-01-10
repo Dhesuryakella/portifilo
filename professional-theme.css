@@ -171,7 +171,7 @@ nav {
 /* Mobile responsive */
 @media (max-width: 968px) {
     .nav-links {
-        display: none;
+        /* display: none; Removed to allow mobile menu to work */
     }
 
     .profile-image-wrapper {
