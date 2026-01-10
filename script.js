@@ -173,9 +173,50 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==================== FORM VALIDATION ====================
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-    // We are allowing native form submission for the first time to trigger Formspree activation.
-    // Once activated, we can re-enable AJAX if needed, but native redirect is more reliable for new forms.
-    console.log("Contact form initialized");
+    contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const form = e.target;
+        const data = new FormData(form);
+        const status = document.getElementById('form-message');
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !message) {
+            showFormMessage('Please fill in all fields.', 'error');
+            return;
+        }
+
+        const btn = form.querySelector('button[type="submit"]');
+        const originalBtnText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        btn.disabled = true;
+
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                showFormMessage('Thank you! Your message has been sent to Dhesurya.', 'success');
+                form.reset();
+            } else {
+                const result = await response.json();
+                showFormMessage(result.errors ? result.errors.map(error => error.message).join(", ") : 'Oops! There was a problem submitting your form', 'error');
+            }
+        } catch (error) {
+            showFormMessage('Oops! There was a problem submitting your form', 'error');
+        } finally {
+            btn.innerHTML = originalBtnText;
+            btn.disabled = false;
+        }
+    });
 }
 
 function showFormMessage(message, type) {
