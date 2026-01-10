@@ -617,6 +617,15 @@ section {
         width: 100%;
         text-align: center;
         padding: var(--spacing-sm);
+        color: #ffffff !important;
+        /* Force white text for visibility on dark mobile menu */
+        font-size: 1.2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-links a.active {
+        color: var(--neon-cyan) !important;
+        /* Keep active link bright */
     }
 
     section {
