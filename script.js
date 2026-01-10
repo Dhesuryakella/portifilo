@@ -173,29 +173,49 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==================== FORM VALIDATION ====================
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
+    contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
+
+        const form = e.target;
+        const data = new FormData(form);
+        const status = document.getElementById('form-message');
 
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
 
-        // Basic validation
         if (!name || !email || !message) {
             showFormMessage('Please fill in all fields.', 'error');
             return;
         }
 
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            showFormMessage('Please enter a valid email address.', 'error');
-            return;
-        }
+        const btn = form.querySelector('button[type="submit"]');
+        const originalBtnText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        btn.disabled = true;
 
-        // Success (in real implementation, this would submit to a backend)
-        showFormMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
-        contactForm.reset();
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                showFormMessage('Thank you! Your message has been sent to Dhesurya.', 'success');
+                form.reset();
+            } else {
+                const result = await response.json();
+                showFormMessage(result.errors ? result.errors.map(error => error.message).join(", ") : 'Oops! There was a problem submitting your form', 'error');
+            }
+        } catch (error) {
+            showFormMessage('Oops! There was a problem submitting your form', 'error');
+        } finally {
+            btn.innerHTML = originalBtnText;
+            btn.disabled = false;
+        }
     });
 }
 
