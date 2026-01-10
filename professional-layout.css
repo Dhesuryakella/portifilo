@@ -214,7 +214,7 @@ section {
     justify-content: center;
 }
 
-/* Grid Improvements */
+/* Grid Improvements - Responsive */
 .grid {
     display: grid;
     gap: var(--space-4);
@@ -226,6 +226,15 @@ section {
 
 .grid-3 {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+@media (max-width: 480px) {
+
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+        /* Force single column on small mobile */
+    }
 }
 
 /* Project Cards */
