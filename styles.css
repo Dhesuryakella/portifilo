@@ -599,10 +599,18 @@ section {
         padding: var(--spacing-md);
         transition: var(--transition-normal);
         border-right: 1px solid rgba(0, 212, 255, 0.2);
+        z-index: 2000;
+        visibility: hidden;
+        /* Hide when closed to prevent focusing */
+        opacity: 0;
     }
 
     .nav-links.active {
         left: 0;
+        visibility: visible;
+        opacity: 1;
+        display: flex !important;
+        /* Force override any display: none */
     }
 
     .nav-links a {
