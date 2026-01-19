@@ -1,0 +1,521 @@
+/* ==================== MOBILE RESPONSIVE FIXES ==================== */
+/* Comprehensive mobile improvements for all screen sizes */
+
+/* ============ GLOBAL MOBILE FIXES ============ */
+@media (max-width: 768px) {
+
+    /* Typography scaling */
+    h1 {
+        font-size: clamp(2rem, 8vw, 3rem) !important;
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 6vw, 2.2rem) !important;
+    }
+
+    h3 {
+        font-size: clamp(1.2rem, 5vw, 1.6rem) !important;
+    }
+
+    body {
+        font-size: 15px;
+    }
+
+    /* Container padding */
+    .container {
+        padding: 0 16px !important;
+    }
+
+    /* Section spacing */
+    section {
+        min-height: auto !important;
+        padding: 60px 0 !important;
+    }
+}
+
+/* ============ NAVIGATION MOBILE ============ */
+@media (max-width: 768px) {
+    nav {
+        padding: 12px 0;
+    }
+
+    .nav-container {
+        padding: 0 16px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .mobile-menu-btn {
+        display: flex !important;
+        z-index: 3000;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: rgba(10, 14, 39, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 40px;
+        gap: 0;
+        transform: translateX(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 2000;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 18px 20px;
+        font-size: 1.2rem;
+        color: #ffffff !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-links a.active {
+        color: #00d4ff !important;
+        background: rgba(0, 212, 255, 0.1);
+    }
+}
+
+/* ============ HERO SECTION MOBILE ============ */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 80px !important;
+        min-height: auto !important;
+    }
+
+    .hero-content-wrapper {
+        flex-direction: column !important;
+        gap: 30px !important;
+        text-align: center;
+    }
+
+    .profile-image-container {
+        order: 1;
+    }
+
+    .profile-image-wrapper {
+        width: 180px !important;
+        height: 180px !important;
+    }
+
+    .profile-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .hero-text {
+        order: 2;
+        text-align: center;
+    }
+
+    .hero-greeting {
+        font-size: 1.1rem !important;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 10vw, 3rem) !important;
+        margin-bottom: 10px !important;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1rem, 5vw, 1.4rem) !important;
+        margin-bottom: 15px !important;
+    }
+
+    .hero-description {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        padding: 0 10px;
+    }
+
+    /* Skills badges */
+    .skills-showcase {
+        justify-content: center;
+        gap: 8px !important;
+        margin: 20px 0 !important;
+    }
+
+    .skill-badge-large {
+        padding: 8px 12px !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Buttons */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px !important;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        justify-content: center;
+        padding: 14px 24px !important;
+    }
+
+    /* Social links */
+    .social-links {
+        justify-content: center;
+        gap: 15px !important;
+    }
+
+    .social-links a {
+        width: 45px !important;
+        height: 45px !important;
+    }
+}
+
+/* ============ CARDS MOBILE ============ */
+@media (max-width: 768px) {
+    .card {
+        padding: 20px !important;
+        border-radius: 16px !important;
+    }
+
+    .about-grid,
+    .grid,
+    .grid-2,
+    .grid-3 {
+        gap: 16px !important;
+    }
+
+    .card-icon {
+        font-size: 2rem !important;
+    }
+
+    .project-card {
+        text-align: center;
+    }
+
+    .project-image {
+        height: 100px !important;
+    }
+
+    .project-image i {
+        font-size: 3rem !important;
+    }
+
+    .project-tags {
+        justify-content: center;
+    }
+
+    .tag {
+        font-size: 0.75rem !important;
+        padding: 4px 10px !important;
+    }
+}
+
+/* ============ SECTION TITLES MOBILE ============ */
+@media (max-width: 768px) {
+    .section-title {
+        margin-bottom: 30px !important;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .section-title p {
+        font-size: 0.95rem !important;
+        padding: 0 10px;
+    }
+
+    .section-title::after {
+        width: 80px !important;
+        height: 3px !important;
+    }
+}
+
+/* ============ CTA SECTION MOBILE ============ */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 50px 0 !important;
+    }
+
+    .cta-content h2 {
+        font-size: 1.6rem !important;
+    }
+
+    .cta-content p {
+        font-size: 0.95rem !important;
+        padding: 0 15px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 12px !important;
+        padding: 0 20px;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .cta-social {
+        gap: 12px !important;
+    }
+}
+
+/* ============ SCROLL TO TOP BUTTON ============ */
+@media (max-width: 768px) {
+    .scroll-top-btn {
+        right: 15px !important;
+        bottom: 15px !important;
+        width: 45px !important;
+        height: 45px !important;
+    }
+}
+
+/* ============ ABOUT PAGE MOBILE ============ */
+@media (max-width: 768px) {
+    .bio-content {
+        padding: 20px !important;
+    }
+
+    .bio-content p {
+        font-size: 0.95rem !important;
+    }
+
+    /* Timeline mobile */
+    .timeline::before {
+        left: 15px !important;
+    }
+
+    .timeline-item {
+        width: 100% !important;
+        padding-left: 40px !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .timeline-marker {
+        left: 5px !important;
+        right: auto !important;
+    }
+
+    /* Stats */
+    .stat-number {
+        font-size: 2rem !important;
+    }
+
+    .stat-label {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ============ SKILLS PAGE MOBILE ============ */
+@media (max-width: 768px) {
+    .skill-card {
+        padding: 16px !important;
+    }
+
+    .skill-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .skill-header h3 {
+        font-size: 1.1rem !important;
+    }
+
+    .category-title {
+        font-size: 1.4rem !important;
+        flex-wrap: wrap;
+    }
+
+    .tool-list {
+        gap: 6px !important;
+    }
+
+    .tool-tag {
+        font-size: 0.75rem !important;
+        padding: 6px 10px !important;
+    }
+}
+
+/* ============ CONTACT PAGE MOBILE ============ */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .contact-card {
+        padding: 15px !important;
+    }
+
+    .contact-icon {
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 1.2rem !important;
+    }
+
+    .contact-form-container {
+        padding: 20px !important;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px !important;
+        font-size: 16px !important;
+        /* Prevents iOS zoom */
+    }
+
+    .social-cards {
+        gap: 12px !important;
+    }
+
+    .social-card {
+        padding: 20px !important;
+    }
+
+    .social-icon {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 1.8rem !important;
+    }
+
+    .availability-list {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    .availability-item {
+        padding: 12px !important;
+    }
+}
+
+/* ============ PROJECTS PAGE MOBILE ============ */
+@media (max-width: 768px) {
+    .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px !important;
+        justify-content: center;
+    }
+
+    .filter-btn {
+        padding: 10px 16px !important;
+        font-size: 0.85rem !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    .project-detail-card {
+        padding: 20px !important;
+    }
+
+    .project-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px !important;
+    }
+
+    .project-icon {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 1.5rem !important;
+    }
+
+    .project-description {
+        font-size: 0.9rem !important;
+    }
+
+    .project-highlights ul {
+        text-align: left;
+    }
+
+    .project-tech {
+        justify-content: center;
+    }
+
+    .tech-tag {
+        font-size: 0.75rem !important;
+    }
+
+    /* Publication */
+    .publication-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px !important;
+    }
+
+    .publication-icon {
+        width: 60px !important;
+        height: 60px !important;
+        margin: 0 auto 15px !important;
+    }
+}
+
+/* ============ EXTRA SMALL SCREENS ============ */
+@media (max-width: 375px) {
+    .container {
+        padding: 0 12px !important;
+    }
+
+    .hero-title {
+        font-size: 1.8rem !important;
+    }
+
+    .skill-badge-large {
+        font-size: 0.7rem !important;
+        padding: 6px 10px !important;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============ LANDSCAPE MOBILE ============ */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-section {
+        min-height: auto !important;
+        padding: 100px 0 50px !important;
+    }
+
+    .profile-image-wrapper {
+        width: 120px !important;
+        height: 120px !important;
+    }
+}
