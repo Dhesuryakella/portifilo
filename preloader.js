@@ -1,41 +1,45 @@
 /* ==================== CINEMATIC PRELOADER ==================== */
-// "Hello" in 15+ languages with smooth transitions
+// "Hello" in languages - Indian first, then International
 
 class CinematicPreloader {
     constructor() {
+        // Ordered: English → Hindi → Telugu → Indian → International
         this.greetings = [
+            // Start with English
             { text: "Hello", lang: "English" },
+            // Then Hindi
             { text: "नमस्ते", lang: "Hindi" },
+            // Then Telugu
             { text: "హలో", lang: "Telugu" },
+            // Other Indian languages
+            { text: "ನಮಸ್ಕಾರ", lang: "Kannada" },
+            { text: "வணக்கம்", lang: "Tamil" },
+            { text: "നമസ്കാരം", lang: "Malayalam" },
+            { text: "નમસ્તે", lang: "Gujarati" },
+            { text: "নমস্কার", lang: "Bengali" },
+            { text: "ਸਤ ਸ੍ਰੀ ਅਕਾਲ", lang: "Punjabi" },
+            { text: "नमस्कार", lang: "Marathi" },
+            // International languages
             { text: "Hola", lang: "Spanish" },
             { text: "Bonjour", lang: "French" },
             { text: "こんにちは", lang: "Japanese" },
             { text: "안녕하세요", lang: "Korean" },
+            { text: "你好", lang: "Chinese" },
             { text: "مرحبا", lang: "Arabic" },
             { text: "Ciao", lang: "Italian" },
-            { text: "Hallo", lang: "German" },
-            { text: "Olá", lang: "Portuguese" },
-            { text: "Привет", lang: "Russian" },
-            { text: "你好", lang: "Chinese" },
-            { text: "Merhaba", lang: "Turkish" },
-            { text: "Γειά σου", lang: "Greek" }
+            { text: "Привет", lang: "Russian" }
         ];
 
         this.currentIndex = 0;
-        this.wordDuration = 600; // ms per word
-        this.totalWords = 8; // Show 8 words before revealing page
+        this.wordDuration = 500; // ms per word
+        this.totalWords = 10; // Show 10 words
 
         this.init();
     }
 
     init() {
-        // Add loading class to body
         document.body.classList.add('loading');
-
-        // Create preloader HTML
         this.createPreloader();
-
-        // Start the animation
         this.animateWords();
     }
 
@@ -45,18 +49,13 @@ class CinematicPreloader {
         preloader.id = 'preloader';
 
         preloader.innerHTML = `
-            <div class="preloader-text" id="preloaderText">Hello</div>
-            <div class="preloader-progress">
-                <div class="preloader-progress-bar" id="progressBar"></div>
-            </div>
+            <div class="preloader-text" id="preloaderText"></div>
         `;
 
-        // Insert at the very beginning of body
         document.body.insertBefore(preloader, document.body.firstChild);
 
         this.preloader = preloader;
         this.textElement = document.getElementById('preloaderText');
-        this.progressBar = document.getElementById('progressBar');
     }
 
     animateWords() {
@@ -64,58 +63,43 @@ class CinematicPreloader {
 
         const showNextWord = () => {
             if (wordsShown >= this.totalWords) {
-                // All words shown, fade out preloader
                 this.hidePreloader();
                 return;
             }
 
-            // Get random greeting (avoid repeating the previous one)
-            let newIndex;
-            do {
-                newIndex = Math.floor(Math.random() * this.greetings.length);
-            } while (newIndex === this.currentIndex && this.greetings.length > 1);
+            // Use sequential order for first 10 words
+            const greeting = this.greetings[wordsShown % this.greetings.length];
 
-            this.currentIndex = newIndex;
-            const greeting = this.greetings[this.currentIndex];
+            // Smooth crossfade animation
+            this.textElement.classList.remove('visible');
 
-            // Update text with fresh animation
-            this.textElement.style.animation = 'none';
-            this.textElement.offsetHeight; // Trigger reflow
-            this.textElement.textContent = greeting.text;
-            this.textElement.setAttribute('data-text', greeting.text);
-            this.textElement.style.animation = `fadeInWord ${this.wordDuration}ms ease forwards`;
+            setTimeout(() => {
+                this.textElement.textContent = greeting.text;
+                this.textElement.classList.add('visible');
+            }, 150);
 
-            // Update progress bar
             wordsShown++;
-            const progress = (wordsShown / this.totalWords) * 100;
-            this.progressBar.style.width = progress + '%';
-
-            // Schedule next word
             setTimeout(showNextWord, this.wordDuration);
         };
 
-        // Start showing words
-        showNextWord();
+        // Start after a tiny delay
+        setTimeout(showNextWord, 100);
     }
 
     hidePreloader() {
-        // Complete the progress bar
-        this.progressBar.style.width = '100%';
+        this.textElement.classList.remove('visible');
 
-        // Small delay before fade out
         setTimeout(() => {
             this.preloader.classList.add('fade-out');
             document.body.classList.remove('loading');
 
-            // Remove preloader from DOM after animation
             setTimeout(() => {
                 this.preloader.remove();
-            }, 800);
-        }, 200);
+            }, 600);
+        }, 300);
     }
 }
 
-// Initialize preloader when DOM starts loading
 document.addEventListener('DOMContentLoaded', () => {
     new CinematicPreloader();
 });
