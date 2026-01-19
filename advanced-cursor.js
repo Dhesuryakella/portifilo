@@ -1,5 +1,5 @@
-// ==================== ULTRA ADVANCED CURSOR SYSTEM ====================
-// Premium cursor with magnetic effects, particle trails, morphing & more
+// ==================== ULTRA SMOOTH CURSOR SYSTEM ====================
+// Premium cursor with butter-smooth animations, magnetic effects & particles
 
 class AdvancedCursor {
     constructor() {
@@ -7,9 +7,10 @@ class AdvancedCursor {
         if (this.isTouchDevice()) return;
 
         // State
-        this.mouse = { x: 0, y: 0 };
-        this.pos = { x: 0, y: 0 };
-        this.followerPos = { x: 0, y: 0 };
+        this.mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        this.pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        this.followerPos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        this.auroraPos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
         this.velocity = { x: 0, y: 0 };
         this.lastMouse = { x: 0, y: 0 };
         this.isHovering = false;
@@ -18,6 +19,11 @@ class AdvancedCursor {
         this.maxParticles = 15;
         this.trailPoints = [];
         this.maxTrailPoints = 12;
+
+        // Smoothing factors (higher = faster, lower = smoother)
+        this.cursorEase = 0.25;      // Main cursor
+        this.followerEase = 0.08;    // Follower ring
+        this.auroraEase = 0.04;      // Aurora glow
 
         // Cursor label texts for different elements
         this.labelTexts = {
@@ -296,46 +302,44 @@ class AdvancedCursor {
     }
 
     animate() {
-        // Smooth cursor movement
-        this.pos.x += (this.mouse.x - this.pos.x) * 0.35;
-        this.pos.y += (this.mouse.y - this.pos.y) * 0.35;
+        // Lerp function for smooth interpolation
+        const lerp = (start, end, factor) => start + (end - start) * factor;
 
-        // Even smoother follower
-        this.followerPos.x += (this.mouse.x - this.followerPos.x) * 0.12;
-        this.followerPos.y += (this.mouse.y - this.followerPos.y) * 0.12;
+        // Ultra-smooth cursor movement with configurable easing
+        this.pos.x = lerp(this.pos.x, this.mouse.x, this.cursorEase);
+        this.pos.y = lerp(this.pos.y, this.mouse.y, this.cursorEase);
 
-        // Update cursor positions
-        this.cursor.style.left = this.pos.x + 'px';
-        this.cursor.style.top = this.pos.y + 'px';
+        // Smoother follower ring
+        this.followerPos.x = lerp(this.followerPos.x, this.mouse.x, this.followerEase);
+        this.followerPos.y = lerp(this.followerPos.y, this.mouse.y, this.followerEase);
 
-        this.follower.style.left = this.followerPos.x + 'px';
-        this.follower.style.top = this.followerPos.y + 'px';
+        // Even smoother aurora glow
+        this.auroraPos.x = lerp(this.auroraPos.x, this.mouse.x, this.auroraEase);
+        this.auroraPos.y = lerp(this.auroraPos.y, this.mouse.y, this.auroraEase);
 
-        // Update other elements
-        this.magnetic.style.left = this.followerPos.x + 'px';
-        this.magnetic.style.top = this.followerPos.y + 'px';
+        // Apply positions using transform for better performance (GPU accelerated)
+        this.cursor.style.transform = `translate3d(${this.pos.x}px, ${this.pos.y}px, 0) translate(-50%, -50%)`;
+        this.follower.style.transform = `translate3d(${this.followerPos.x}px, ${this.followerPos.y}px, 0) translate(-50%, -50%)`;
 
-        this.aurora.style.left = this.followerPos.x + 'px';
-        this.aurora.style.top = this.followerPos.y + 'px';
+        // Update other elements with transform
+        this.magnetic.style.transform = `translate3d(${this.followerPos.x}px, ${this.followerPos.y}px, 0) translate(-50%, -50%)`;
+        this.aurora.style.transform = `translate3d(${this.auroraPos.x}px, ${this.auroraPos.y}px, 0) translate(-50%, -50%)`;
+        this.morph.style.transform = `translate3d(${this.followerPos.x}px, ${this.followerPos.y}px, 0) translate(-50%, -50%)`;
+        this.label.style.transform = `translate3d(${this.pos.x}px, ${this.pos.y + 30}px, 0) translate(-50%, 0)`;
 
-        this.morph.style.left = this.followerPos.x + 'px';
-        this.morph.style.top = this.followerPos.y + 'px';
-
-        // Update label position
-        this.label.style.left = this.pos.x + 'px';
-        this.label.style.top = this.pos.y + 'px';
-
-        // Calculate stretch based on velocity
+        // Calculate velocity-based stretch effect
         const speed = Math.sqrt(this.velocity.x ** 2 + this.velocity.y ** 2);
-        const stretch = Math.min(speed * 0.05, 0.5);
-        const angle = Math.atan2(this.velocity.y, this.velocity.x) * (180 / Math.PI);
 
-        if (speed > 2 && !this.isHovering) {
+        if (speed > 3 && !this.isHovering) {
+            const stretch = Math.min(speed * 0.03, 0.4);
+            const angle = Math.atan2(this.velocity.y, this.velocity.x) * (180 / Math.PI);
             this.cursor.style.transform =
-                `translate(-50%, -50%) scaleX(${1 + stretch}) rotate(${angle}deg)`;
-        } else if (!this.isHovering) {
-            this.cursor.style.transform = 'translate(-50%, -50%)';
+                `translate3d(${this.pos.x}px, ${this.pos.y}px, 0) translate(-50%, -50%) scaleX(${1 + stretch}) rotate(${angle}deg)`;
         }
+
+        // Smooth decay of velocity for natural feel
+        this.velocity.x *= 0.85;
+        this.velocity.y *= 0.85;
 
         requestAnimationFrame(() => this.animate());
     }
