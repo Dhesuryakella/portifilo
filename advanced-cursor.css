@@ -1,0 +1,423 @@
+/* ==================== ULTRA ADVANCED CURSOR SYSTEM ==================== */
+/* Premium cursor effects with magnetic interactions, particles & morphing */
+
+/* Hide default cursor globally */
+* {
+    cursor: none !important;
+}
+
+/* ==================== MAIN CURSOR DOT ==================== */
+.cursor-main {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #00ffff, #ff00ff);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100001;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+    box-shadow:
+        0 0 10px rgba(0, 255, 255, 0.8),
+        0 0 20px rgba(0, 255, 255, 0.5),
+        0 0 40px rgba(255, 0, 255, 0.3);
+}
+
+.cursor-main.hover {
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #00ffff;
+    mix-blend-mode: normal;
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.9),
+        0 0 40px rgba(0, 255, 255, 0.6),
+        inset 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.cursor-main.click {
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* ==================== CURSOR FOLLOWER RING ==================== */
+.cursor-follower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid rgba(0, 255, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100000;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.cursor-follower.hover {
+    width: 80px;
+    height: 80px;
+    border-color: rgba(255, 0, 255, 0.8);
+    background: rgba(255, 0, 255, 0.05);
+}
+
+.cursor-follower.click {
+    transform: translate(-50%, -50%) scale(0.9);
+    border-color: #ffff00;
+}
+
+/* ==================== MAGNETIC EFFECT ==================== */
+.cursor-magnetic {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    border: 1px dashed rgba(0, 255, 255, 0.2);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99998;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.cursor-magnetic.active {
+    opacity: 1;
+}
+
+/* ==================== PARTICLE TRAIL SYSTEM ==================== */
+.cursor-particle {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99997;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    animation: particleFade 0.8s ease-out forwards;
+}
+
+.cursor-particle.cyan {
+    background: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.cursor-particle.magenta {
+    background: #ff00ff;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+}
+
+.cursor-particle.yellow {
+    background: #ffff00;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+}
+
+.cursor-particle.green {
+    background: #39ff14;
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.8);
+}
+
+@keyframes particleFade {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0) translateY(-30px);
+    }
+}
+
+/* ==================== GLOW TRAIL ==================== */
+.cursor-glow-trail {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99996;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.4) 0%, transparent 70%);
+    filter: blur(5px);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* ==================== CLICK RIPPLE EFFECT ==================== */
+.cursor-ripple {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgba(0, 255, 255, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    animation: rippleExpand 0.6s ease-out forwards;
+}
+
+@keyframes rippleExpand {
+    0% {
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+        border-width: 2px;
+    }
+
+    100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+        border-width: 1px;
+    }
+}
+
+/* ==================== TEXT CURSOR (For Links/Buttons) ==================== */
+.cursor-text-label {
+    position: fixed;
+    padding: 6px 14px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #00ffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 255, 0.5);
+    pointer-events: none;
+    z-index: 100002;
+    opacity: 0;
+    transform: translate(-50%, 30px) scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.cursor-text-label.active {
+    opacity: 1;
+    transform: translate(-50%, 30px) scale(1);
+}
+
+/* ==================== MORPHING SHAPES ==================== */
+.cursor-morph {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    z-index: 99995;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50%;
+}
+
+.cursor-morph.square {
+    border-radius: 10px;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.cursor-morph.triangle {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 50px solid rgba(0, 255, 255, 0.1);
+    background: transparent;
+}
+
+/* ==================== AURORA GLOW EFFECT ==================== */
+.cursor-aurora {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+    z-index: 99994;
+    transform: translate(-50%, -50%);
+    background:
+        radial-gradient(ellipse at 30% 30%, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 70%, rgba(255, 0, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(57, 255, 20, 0.1) 0%, transparent 60%);
+    filter: blur(20px);
+    opacity: 0.6;
+    animation: auroraShift 4s ease-in-out infinite;
+}
+
+@keyframes auroraShift {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.2) rotate(180deg);
+    }
+}
+
+/* ==================== INTERACTIVE ELEMENT EFFECTS ==================== */
+/* Magnetic hover zone indicators */
+[data-cursor="magnetic"] {
+    position: relative;
+}
+
+[data-cursor="magnetic"]::after {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border-radius: inherit;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Cursor states for different elements */
+.cursor-main.text-hover {
+    width: 3px;
+    height: 20px;
+    border-radius: 2px;
+    background: #00ffff;
+    animation: textCursorBlink 1s infinite;
+}
+
+@keyframes textCursorBlink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0.3;
+    }
+}
+
+.cursor-main.image-hover {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.cursor-main.image-hover::after {
+    content: '👁';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+/* ==================== LOADING STATE ==================== */
+.cursor-main.loading {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: 2px solid transparent;
+    border-top-color: #00ffff;
+    border-right-color: #ff00ff;
+    animation: cursorSpin 0.8s linear infinite;
+}
+
+@keyframes cursorSpin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* ==================== STICK TO ELEMENT EFFECT ==================== */
+.cursor-stick {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 99993;
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cursor-stick.active {
+    opacity: 1;
+    animation: stickPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes stickPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ==================== MOBILE FALLBACK ==================== */
+@media (max-width: 768px),
+(hover: none) {
+    * {
+        cursor: auto !important;
+    }
+
+    .cursor-main,
+    .cursor-follower,
+    .cursor-magnetic,
+    .cursor-particle,
+    .cursor-glow-trail,
+    .cursor-ripple,
+    .cursor-text-label,
+    .cursor-morph,
+    .cursor-aurora {
+        display: none !important;
+    }
+}
+
+/* ==================== REDUCED MOTION ==================== */
+@media (prefers-reduced-motion: reduce) {
+
+    .cursor-main,
+    .cursor-follower {
+        transition: none;
+    }
+
+    .cursor-particle,
+    .cursor-ripple,
+    .cursor-aurora {
+        animation: none;
+    }
+}
+
+/* ==================== LIGHT THEME ADJUSTMENTS ==================== */
+[data-theme="light"] .cursor-main {
+    background: linear-gradient(135deg, #7b2ff7, #2563eb);
+    box-shadow:
+        0 0 10px rgba(123, 47, 247, 0.8),
+        0 0 20px rgba(123, 47, 247, 0.5);
+}
+
+[data-theme="light"] .cursor-follower {
+    border-color: rgba(123, 47, 247, 0.5);
+}
+
+[data-theme="light"] .cursor-text-label {
+    background: rgba(255, 255, 255, 0.95);
+    color: #7b2ff7;
+    border-color: rgba(123, 47, 247, 0.5);
+}
+
+[data-theme="light"] .cursor-aurora {
+    background:
+        radial-gradient(ellipse at 30% 30%, rgba(123, 47, 247, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 70%, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+}
