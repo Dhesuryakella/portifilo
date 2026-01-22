@@ -38,16 +38,22 @@ class CinematicPreloader {
     }
 
     init() {
-        const lastVisit = localStorage.getItem('portfolio_last_visit');
-        const now = new Date().getTime();
+        const lastVisitStr = localStorage.getItem('portfolio_last_visit');
+        const now = Date.now();
         const sessionDuration = 3600000; // 1 hour in milliseconds
 
-        if (lastVisit && (now - lastVisit < sessionDuration)) {
-            // Recently visited (within 1 hour), don't show preloader
-            return;
+        // Parse the stored timestamp properly
+        if (lastVisitStr) {
+            const lastVisit = parseInt(lastVisitStr, 10);
+            if (!isNaN(lastVisit) && (now - lastVisit < sessionDuration)) {
+                // Recently visited (within 1 hour), don't show preloader
+                console.log('Preloader skipped - visited recently');
+                return;
+            }
         }
 
         // First visit or session expired
+        console.log('Showing preloader - first visit or session expired');
         document.body.classList.add('loading');
         this.createPreloader();
         this.animateWords();
