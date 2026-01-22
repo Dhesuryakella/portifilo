@@ -1,0 +1,97 @@
+/* ==================== VIEW COUNTER STYLES ==================== */
+/* Sleek, minimal counter at the bottom of the page */
+
+.view-counter {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: rgba(15, 20, 40, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 10px 20px;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(102, 126, 234, 0.1);
+    transition: all 0.3s ease;
+}
+
+.view-counter:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(102, 126, 234, 0.2);
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+.counter-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #e2e8f0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.counter-content i {
+    color: #667eea;
+    font-size: 16px;
+}
+
+.counter-label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.counter-value {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    font-size: 16px;
+    min-width: 50px;
+    text-align: center;
+}
+
+/* Light theme support */
+[data-theme="light"] .view-counter {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .counter-content {
+    color: #1a1a2e;
+}
+
+[data-theme="light"] .counter-label {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .view-counter {
+        bottom: 15px;
+        left: 15px;
+        padding: 8px 16px;
+    }
+
+    .counter-content {
+        font-size: 12px;
+        gap: 6px;
+    }
+
+    .counter-content i {
+        font-size: 14px;
+    }
+
+    .counter-value {
+        font-size: 14px;
+    }
+}
+
+/* Hide when chat is open on mobile */
+body.chat-open .view-counter {
+    display: none;
+}

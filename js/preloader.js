@@ -38,9 +38,22 @@ class CinematicPreloader {
     }
 
     init() {
+        const lastVisit = localStorage.getItem('portfolio_last_visit');
+        const now = new Date().getTime();
+        const sessionDuration = 3600000; // 1 hour in milliseconds
+
+        if (lastVisit && (now - lastVisit < sessionDuration)) {
+            // Recently visited (within 1 hour), don't show preloader
+            return;
+        }
+
+        // First visit or session expired
         document.body.classList.add('loading');
         this.createPreloader();
         this.animateWords();
+
+        // Mark visit time
+        localStorage.setItem('portfolio_last_visit', now.toString());
     }
 
     createPreloader() {
