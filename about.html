@@ -56,22 +56,33 @@
                     <h2>Who I Am</h2>
                     <p>
                         I'm Dhesurya Kella, a final-year B.Tech student in Electronics and Communication Engineering
-                        at MVGR College of Engineering, Vizianagaram. My journey in engineering has been driven by a
-                        passion for creating intelligent systems that bridge the gap between hardware and software.
+                        at MVGR College of Engineering, Vizianagaram. My work is best described as
+                        <strong>hardware-driven
+                            system development</strong> supported by firmware and software, rather than software built
+                        in isolation.
                     </p>
                     <p>
-                        With hands-on experience in embedded firmware development, computer vision, and machine
-                        learning,
-                        I specialize in building real-time systems that solve practical problems. From developing
-                        ESP32-based communication protocols to creating AI-powered crowd safety systems, I thrive on
-                        challenges that push the boundaries of what's possible.
+                        I primarily work at the <strong>intersection of electronics, sensing, communication, and
+                            control</strong>,
+                        where real-world constraints such as power, latency, signal quality, sensor noise, and
+                        reliability
+                        directly influence system design. Most of my projects start at the hardware level—selecting and
+                        interfacing sensors, designing power and motor control paths, understanding timing, PWM
+                        behavior,
+                        and debugging wiring, grounding, and component limitations.
                     </p>
                     <p>
                         My work has been recognized through publications at IEEE conferences, and I've had the privilege
                         of conducting research at prestigious institutions like IIT Tirupati and NITK Surathkal. I'm
-                        particularly interested in safety-critical systems, aerospace applications, and the intersection
-                        of embedded systems with artificial intelligence.
+                        particularly interested in safety-critical systems, swarm robotics, and the integration of
+                        embedded systems with artificial intelligence.
                     </p>
+                    <blockquote class="engineering-quote">
+                        <i class="fas fa-quote-left"></i>
+                        "Embedded engineering is not about writing code alone, but about making hardware and software
+                        behave predictably together."
+                        <i class="fas fa-quote-right"></i>
+                    </blockquote>
                 </div>
             </div>
 
@@ -369,5 +380,32 @@
         .bio-content {
             padding: 2rem;
         }
+    }
+
+    /* Engineering Quote */
+    .engineering-quote {
+        background: var(--glass-bg);
+        border-left: 4px solid var(--primary);
+        padding: 1.5rem 2rem;
+        margin: 2rem 0 0;
+        border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        font-style: italic;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        position: relative;
+    }
+
+    .engineering-quote i {
+        color: var(--primary);
+        opacity: 0.6;
+        font-size: 0.9rem;
+    }
+
+    .engineering-quote i.fa-quote-left {
+        margin-right: 0.5rem;
+    }
+
+    .engineering-quote i.fa-quote-right {
+        margin-left: 0.5rem;
     }
 </style>
