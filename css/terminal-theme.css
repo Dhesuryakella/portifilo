@@ -1,0 +1,738 @@
+/* ==================== TERMINAL/CYBERPUNK PORTFOLIO ==================== */
+/* Hacker-style aesthetic with matrix effects, glitch, and neon */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    /* Cyberpunk Color Palette */
+    --terminal-black: #0a0a0a;
+    --terminal-dark: #0d1117;
+    --terminal-gray: #161b22;
+    --terminal-border: #30363d;
+
+    /* Neon Colors */
+    --neon-green: #00ff41;
+    --neon-cyan: #00d4ff;
+    --neon-pink: #ff00ff;
+    --neon-yellow: #ffff00;
+    --neon-orange: #ff6600;
+    --neon-red: #ff0040;
+
+    /* Matrix Green */
+    --matrix-green: #00ff41;
+    --matrix-dark: #003300;
+
+    /* Text Colors */
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --text-muted: #484f58;
+
+    /* Fonts */
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    --font-cyber: 'Orbitron', sans-serif;
+
+    /* Glows */
+    --glow-green: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 40px #00ff4180;
+    --glow-cyan: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff80;
+    --glow-pink: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff80;
+}
+
+/* ==================== BASE STYLES ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-mono);
+    background: var(--terminal-black);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ==================== MATRIX RAIN BACKGROUND ==================== */
+.matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background: linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #001a00 100%);
+    overflow: hidden;
+}
+
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -9;
+    opacity: 0.15;
+}
+
+/* Scanlines Overlay */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.15) 2px,
+            rgba(0, 0, 0, 0.15) 4px);
+}
+
+/* CRT Flicker Effect */
+.crt-flicker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+    background: rgba(0, 255, 65, 0.01);
+    animation: flicker 0.1s infinite;
+}
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 0.97;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Grid Pattern */
+.grid-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -8;
+    background-image:
+        linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* ==================== GLITCH TEXT EFFECT ==================== */
+.glitch {
+    position: relative;
+    font-family: var(--font-cyber);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    color: var(--neon-cyan);
+    animation: glitch-1 0.3s infinite linear alternate-reverse;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+}
+
+.glitch::after {
+    color: var(--neon-pink);
+    animation: glitch-2 0.3s infinite linear alternate-reverse;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch-1 {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-3px);
+    }
+
+    40% {
+        transform: translateX(3px);
+    }
+
+    60% {
+        transform: translateX(-2px);
+    }
+
+    80% {
+        transform: translateX(2px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes glitch-2 {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(3px);
+    }
+
+    40% {
+        transform: translateX(-3px);
+    }
+
+    60% {
+        transform: translateX(2px);
+    }
+
+    80% {
+        transform: translateX(-2px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* ==================== TERMINAL NAVIGATION ==================== */
+.terminal-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    background: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid var(--neon-green);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.terminal-logo {
+    font-family: var(--font-cyber);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--neon-green);
+    text-shadow: var(--glow-green);
+    letter-spacing: 2px;
+}
+
+.terminal-logo::before {
+    content: '> ';
+    color: var(--neon-cyan);
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: 0.6rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.nav-links a::before {
+    content: './';
+    color: var(--neon-green);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover::before,
+.nav-links a.active::before {
+    opacity: 1;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--neon-green);
+    background: rgba(0, 255, 65, 0.1);
+    border-color: var(--neon-green);
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 2px;
+    background: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
+    transition: all 0.3s ease;
+}
+
+/* ==================== HERO SECTION - TERMINAL STYLE ==================== */
+.hero-terminal {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 2rem 60px;
+    position: relative;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Terminal Window */
+.terminal-window {
+    background: var(--terminal-dark);
+    border: 1px solid var(--terminal-border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow:
+        0 0 40px rgba(0, 255, 65, 0.1),
+        0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--terminal-gray);
+    border-bottom: 1px solid var(--terminal-border);
+}
+
+.terminal-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal-btn.red {
+    background: #ff5f56;
+}
+
+.terminal-btn.yellow {
+    background: #ffbd2e;
+}
+
+.terminal-btn.green {
+    background: #27c93f;
+}
+
+.terminal-title {
+    flex: 1;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.terminal-body {
+    padding: 2rem;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Terminal Output Lines */
+.terminal-line {
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: typeIn 0.3s ease forwards;
+}
+
+.terminal-line:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.terminal-line:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.terminal-line:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.terminal-line:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.terminal-line:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.terminal-line:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+.terminal-line:nth-child(7) {
+    animation-delay: 1.4s;
+}
+
+.terminal-line:nth-child(8) {
+    animation-delay: 1.6s;
+}
+
+.terminal-line:nth-child(9) {
+    animation-delay: 1.8s;
+}
+
+.terminal-line:nth-child(10) {
+    animation-delay: 2s;
+}
+
+@keyframes typeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.prompt {
+    color: var(--neon-green);
+    font-weight: 600;
+}
+
+.command {
+    color: var(--neon-cyan);
+}
+
+.output {
+    color: var(--text-primary);
+}
+
+.comment {
+    color: var(--text-muted);
+}
+
+.string {
+    color: var(--neon-yellow);
+}
+
+.keyword {
+    color: var(--neon-pink);
+}
+
+.function {
+    color: var(--neon-cyan);
+}
+
+.number {
+    color: var(--neon-orange);
+}
+
+/* Typing Cursor */
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background: var(--neon-green);
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+    margin-left: 5px;
+    box-shadow: var(--glow-green);
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ==================== SECTION STYLES ==================== */
+.section {
+    padding: 100px 2rem;
+    position: relative;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-family: var(--font-cyber);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--neon-green);
+    text-shadow: var(--glow-green);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section-title::before {
+    content: '//';
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+.section-line {
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--neon-green), transparent);
+    margin-top: 1rem;
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+/* ==================== CARDS - TERMINAL STYLE ==================== */
+.terminal-card {
+    background: var(--terminal-dark);
+    border: 1px solid var(--terminal-border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.terminal-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--neon-green), var(--neon-cyan), var(--neon-pink));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.terminal-card:hover {
+    border-color: var(--neon-green);
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+    transform: translateY(-5px);
+}
+
+.terminal-card:hover::before {
+    opacity: 1;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--terminal-gray);
+    border-bottom: 1px solid var(--terminal-border);
+    font-size: 0.85rem;
+}
+
+.card-header .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--neon-cyan);
+    margin-bottom: 0.75rem;
+}
+
+.card-title::before {
+    content: '> ';
+    color: var(--neon-green);
+}
+
+.card-text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn-terminal {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary-terminal {
+    background: transparent;
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.btn-primary-terminal::before {
+    content: '$ ';
+}
+
+.btn-primary-terminal:hover {
+    background: var(--neon-green);
+    color: var(--terminal-black);
+    box-shadow: var(--glow-green);
+}
+
+.btn-secondary-terminal {
+    background: transparent;
+    color: var(--neon-cyan);
+    border: 1px solid var(--neon-cyan);
+}
+
+.btn-secondary-terminal::before {
+    content: '> ';
+}
+
+.btn-secondary-terminal:hover {
+    background: var(--neon-cyan);
+    color: var(--terminal-black);
+    box-shadow: var(--glow-cyan);
+}
+
+/* ==================== SKILL TAGS ==================== */
+.skill-tag {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--neon-green);
+    background: rgba(0, 255, 65, 0.1);
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    border-radius: 4px;
+    margin: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+    background: rgba(0, 255, 65, 0.2);
+    border-color: var(--neon-green);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+}
+
+/* ==================== GRID LAYOUTS ==================== */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==================== FOOTER ==================== */
+.terminal-footer {
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--terminal-border);
+    background: var(--terminal-dark);
+}
+
+.terminal-footer p {
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.terminal-footer .highlight {
+    color: var(--neon-green);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: rgba(10, 10, 10, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .terminal-body {
+        padding: 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .section {
+        padding: 60px 1rem;
+    }
+}
