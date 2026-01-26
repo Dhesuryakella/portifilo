@@ -1,0 +1,263 @@
+/* ==================== PREMIUM 3D CARDS ==================== */
+/* Ultra-modern card designs with 3D effects, gradients & animations */
+
+/* Premium Card Base */
+.premium-card {
+    position: relative;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 2rem;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* Animated gradient border */
+.premium-card::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 26px;
+    background: linear-gradient(135deg,
+            #6366f1, #8b5cf6, #ec4899, #06b6d4, #6366f1);
+    background-size: 300% 300%;
+    animation: gradientBorder 8s ease infinite;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.premium-card:hover::before {
+    opacity: 1;
+}
+
+/* Inner content background */
+.premium-card::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 22px;
+    background: linear-gradient(135deg,
+            rgba(15, 15, 35, 0.95) 0%,
+            rgba(20, 20, 50, 0.9) 100%);
+    z-index: -1;
+}
+
+.premium-card:hover {
+    transform: translateY(-10px) rotateX(5deg) scale(1.02);
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(99, 102, 241, 0.2);
+}
+
+@keyframes gradientBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Card with Icon */
+.premium-card .card-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+    transition: all 0.3s ease;
+}
+
+.premium-card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5);
+}
+
+/* Project Card Enhanced */
+.project-card-premium {
+    position: relative;
+    background: rgba(15, 15, 35, 0.8);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-card-premium .project-image {
+    height: 200px;
+    background: linear-gradient(135deg, #1a1a3e 0%, #2d1b4e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card-premium .project-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            rgba(99, 102, 241, 0.2) 0%,
+            rgba(236, 72, 153, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card-premium:hover .project-image::before {
+    opacity: 1;
+}
+
+.project-card-premium:hover .project-image i {
+    transform: scale(1.2);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.project-card-premium .project-content {
+    padding: 1.5rem;
+}
+
+.project-card-premium:hover {
+    transform: translateY(-10px);
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(99, 102, 241, 0.15);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+/* Skill Badge Premium */
+.skill-badge-premium {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg,
+            rgba(99, 102, 241, 0.2) 0%,
+            rgba(139, 92, 246, 0.1) 100%);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #a5b4fc;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.skill-badge-premium:hover {
+    background: linear-gradient(135deg,
+            rgba(99, 102, 241, 0.4) 0%,
+            rgba(139, 92, 246, 0.3) 100%);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+    border-color: rgba(99, 102, 241, 0.6);
+}
+
+.skill-badge-premium i {
+    font-size: 1rem;
+}
+
+/* Stats Card */
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.2);
+    transform: translateY(-5px);
+}
+
+.stat-card .stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card .stat-label {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+}
+
+/* Timeline Enhanced */
+.timeline-item-premium {
+    position: relative;
+    padding-left: 3rem;
+    padding-bottom: 2rem;
+    border-left: 2px solid rgba(99, 102, 241, 0.3);
+}
+
+.timeline-item-premium::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}
+
+.timeline-item-premium:last-child {
+    border-left-color: transparent;
+}
+
+/* Contact Card Style */
+.contact-card-premium {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.contact-card-premium:hover {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.3);
+    transform: translateX(10px);
+}
+
+.contact-card-premium .icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-radius: 12px;
+    font-size: 1.3rem;
+}

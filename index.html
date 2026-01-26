@@ -5,39 +5,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Dhesurya Kella - Electronics & Communication Engineering student specializing in Embedded Systems, AI/ML, and Computer Vision">
-    <meta name="keywords" content="Dhesurya Kella, Embedded Systems, AI, Machine Learning, Computer Vision, Portfolio">
+        content="Dhesurya Kella - Hardware-Oriented Embedded & Robotics Engineer | AI/ML | Computer Vision">
+    <meta name="keywords"
+        content="Dhesurya Kella, Embedded Systems, AI, Machine Learning, Computer Vision, Portfolio, Robotics">
     <meta name="author" content="Dhesurya Kella">
+
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Dhesurya Kella | Embedded & Robotics Engineer">
+    <meta property="og:description"
+        content="Hardware-Oriented Embedded & Robotics Engineer specializing in AI/ML and Computer Vision">
+    <meta property="og:type" content="website">
+
     <title>Dhesurya Kella | Portfolio</title>
 
-    <link rel="stylesheet" href="css/design-system.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/professional-layout.css">
-    <link rel="stylesheet" href="css/simple-animations.css">
-    <link rel="stylesheet" href="css/professional-theme.css">
-    <link rel="stylesheet" href="css/realistic-icons.css">
-    <link rel="stylesheet" href="css/advanced-chatbot.css">
-    <link rel="stylesheet" href="css/theme-toggle.css">
-    <link rel="stylesheet" href="css/advanced-cursor.css">
-    <link rel="stylesheet" href="css/preloader.css">
-    <link rel="stylesheet" href="css/mobile-fixes.css">
-    <link rel="stylesheet" href="css/view-counter.css">
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/premium-background.css">
+    <link rel="stylesheet" href="css/premium-nav.css">
+    <link rel="stylesheet" href="css/premium-hero.css">
+    <link rel="stylesheet" href="css/premium-cards.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a1a;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1rem;
+        }
+
+        .section-line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #6366f1 0%, #ec4899 100%);
+            margin: 1rem auto 0;
+            border-radius: 4px;
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">DK.</div>
-            <ul class="nav-links">
+    <!-- Premium Background Effects -->
+    <div class="aurora-bg"></div>
+    <div class="orb-1"></div>
+    <div class="orb-2"></div>
+    <div class="orb-3"></div>
+    <div class="mesh-overlay"></div>
+    <div class="stars"></div>
+    <div class="grid-lines"></div>
+    <div class="noise-overlay"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Premium Navigation -->
+    <nav class="nav-premium" id="navbar">
+        <div class="nav-container-premium">
+            <a href="index.html" class="logo-premium">DK.</a>
+            <ul class="nav-links-premium" id="navLinks">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <button class="mobile-menu-btn-premium" id="mobileMenuBtn" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -45,66 +146,90 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-        <div class="container">
-            <div class="hero-content-wrapper">
-                <div class="profile-image-container fade-in">
-                    <div class="profile-image-wrapper">
-                        <img src="images/profile.jpg" alt="Dhesurya Kella">
-                    </div>
+    <!-- Premium Hero Section -->
+    <section class="hero-premium">
+        <div class="hero-content-premium">
+            <!-- Profile with 3D Effect -->
+            <div class="profile-3d-container">
+                <div class="profile-glow"></div>
+                <div class="profile-image-premium">
+                    <img src="images/profile.jpg" alt="Dhesurya Kella">
                 </div>
-                <div class="hero-text fade-in">
-                    <span class="hero-greeting">Hi, I'm</span>
-                    <h1 class="hero-title">Dhesurya Kella</h1>
-                    <h2 class="hero-subtitle">Hardware-Oriented Embedded & Robotics Engineer</h2>
-                    <p class="hero-description">
-                        Final-year B.Tech ECE student specializing in hardware-driven system development.
-                        Building intelligent embedded systems at the intersection of electronics, sensing,
-                        communication, and control—where real-world constraints shape design.
-                    </p>
-                    <div class="skills-showcase">
-                        <span class="skill-badge-large"><i class="fab fa-python"></i> Python</span>
-                        <span class="skill-badge-large"><i class="fas fa-microchip"></i> Embedded C</span>
-                        <span class="skill-badge-large"><i class="fas fa-brain"></i> AI/ML</span>
-                        <span class="skill-badge-large"><i class="fas fa-eye"></i> Computer Vision</span>
-                        <span class="skill-badge-large"><i class="fas fa-microchip"></i> ESP32</span>
-                        <span class="skill-badge-large"><i class="fas fa-code"></i> C++</span>
-                    </div>
-                    <div class="hero-buttons">
-                        <a href="projects.html" class="btn btn-primary">
-                            <i class="fas fa-code"></i> View Projects
-                        </a>
-                        <a href="contact.html" class="btn btn-outline">
-                            <i class="fas fa-envelope"></i> Get in Touch
-                        </a>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/Dhesuryakella" target="_blank" class="social-link"
-                            aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://in.linkedin.com/in/dhesuryakella" target="_blank" class="social-link"
-                            aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="mailto:dhesuryak@gmail.com" class="social-link" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
+                <!-- Floating Tech Icons -->
+                <div class="floating-icons">
+                    <div class="floating-icon"><i class="fab fa-python"></i></div>
+                    <div class="floating-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="floating-icon"><i class="fas fa-brain"></i></div>
+                    <div class="floating-icon"><i class="fas fa-code"></i></div>
+                    <div class="floating-icon"><i class="fas fa-robot"></i></div>
+                    <div class="floating-icon"><i class="fas fa-eye"></i></div>
+                </div>
+            </div>
+
+            <!-- Hero Text -->
+            <div class="hero-text-premium">
+                <span class="hero-greeting">👋 Hello, I'm</span>
+                <h1 class="hero-name">Dhesurya Kella</h1>
+                <h2 class="hero-role">Hardware-Oriented Embedded & Robotics Engineer</h2>
+                <p class="hero-description">
+                    Final-year B.Tech ECE student specializing in hardware-driven system development.
+                    Building intelligent embedded systems at the intersection of electronics, sensing,
+                    communication, and control—where real-world constraints shape design.
+                </p>
+
+                <!-- Skills -->
+                <div class="hero-skills">
+                    <span class="skill-badge-premium"><i class="fab fa-python"></i> Python</span>
+                    <span class="skill-badge-premium"><i class="fas fa-microchip"></i> Embedded C</span>
+                    <span class="skill-badge-premium"><i class="fas fa-brain"></i> AI/ML</span>
+                    <span class="skill-badge-premium"><i class="fas fa-eye"></i> Computer Vision</span>
+                    <span class="skill-badge-premium"><i class="fas fa-microchip"></i> ESP32</span>
+                    <span class="skill-badge-premium"><i class="fas fa-robot"></i> ROS2</span>
+                </div>
+
+                <!-- Buttons -->
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn btn-primary">
+                        <i class="fas fa-code"></i> View Projects
+                    </a>
+                    <a href="contact.html" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i> Get in Touch
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="social-links-premium">
+                    <a href="https://github.com/Dhesuryakella" target="_blank" class="social-link-premium"
+                        aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://in.linkedin.com/in/dhesuryakella" target="_blank" class="social-link-premium"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:dhesuryak@gmail.com" class="social-link-premium" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
             </div>
         </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
     </section>
 
-    <!-- Quick About Section -->
-    <section id="about-preview" class="about-preview-section">
+    <!-- About Preview Section -->
+    <section id="about-preview">
         <div class="container">
-            <div class="section-title">
+            <div class="section-header">
                 <h2>About Me</h2>
+                <div class="section-line"></div>
             </div>
-            <div class="about-grid">
-                <div class="about-card card fade-in-up">
+            <div class="grid-3">
+                <div class="premium-card">
                     <div class="card-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
@@ -112,7 +237,7 @@
                     <p>B.Tech in Electronics and Communication Engineering from MVGR College of Engineering (2022-2026)
                     </p>
                 </div>
-                <div class="about-card card fade-in-up">
+                <div class="premium-card">
                     <div class="card-icon">
                         <i class="fas fa-briefcase"></i>
                     </div>
@@ -120,7 +245,7 @@
                     <p>Research internships at IIT Tirupati and NITK Surathkal, focusing on embedded systems and AI/ML
                     </p>
                 </div>
-                <div class="about-card card fade-in-up">
+                <div class="premium-card">
                     <div class="card-icon">
                         <i class="fas fa-award"></i>
                     </div>
@@ -128,77 +253,106 @@
                     <p>IEEE Conference paper on communication protocols and vision-based localization (ICRM 2025)</p>
                 </div>
             </div>
-            <div class="text-center mt-2">
+            <div style="text-align: center; margin-top: 3rem;">
                 <a href="about.html" class="btn btn-outline">Learn More About Me</a>
             </div>
         </div>
     </section>
 
-    <!-- Featured Projects -->
-    <section id="featured-projects" class="featured-projects-section">
+    <!-- Featured Projects Section -->
+    <section id="featured-projects">
         <div class="container">
-            <div class="section-title">
+            <div class="section-header">
                 <h2>Featured Projects</h2>
                 <p>Some of my recent work in embedded systems and AI/ML</p>
+                <div class="section-line"></div>
             </div>
-            <div class="grid grid-3">
-                <div class="project-card card" data-category="ai">
+            <div class="grid-3">
+                <div class="project-card-premium">
                     <div class="project-image">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>Stampede Prevention System</h3>
-                    <p>Real-time crowd analytics using YOLOv8 and ByteTrack for safety monitoring with spatiotemporal
-                        heatmaps</p>
-                    <div class="project-tags">
-                        <span class="tag">YOLOv8</span>
-                        <span class="tag">ByteTrack</span>
-                        <span class="tag">Computer Vision</span>
+                    <div class="project-content">
+                        <h3>Stampede Prevention System</h3>
+                        <p>Real-time crowd analytics using YOLOv8 and ByteTrack for safety monitoring with
+                            spatiotemporal heatmaps</p>
+                        <div class="hero-skills" style="margin-top: 1rem;">
+                            <span class="skill-badge-premium">YOLOv8</span>
+                            <span class="skill-badge-premium">ByteTrack</span>
+                            <span class="skill-badge-premium">CV</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card card" data-category="embedded">
+                <div class="project-card-premium">
                     <div class="project-image">
                         <i class="fas fa-microchip"></i>
                     </div>
-                    <h3>ESP32 Multi-Node Communication</h3>
-                    <p>Low-latency wireless communication firmware using ESP-NOW with UART debugging and performance
-                        validation</p>
-                    <div class="project-tags">
-                        <span class="tag">ESP32</span>
-                        <span class="tag">Embedded C</span>
-                        <span class="tag">ESP-NOW</span>
+                    <div class="project-content">
+                        <h3>ESP32 Multi-Node Communication</h3>
+                        <p>Low-latency wireless communication firmware using ESP-NOW with UART debugging and performance
+                            validation</p>
+                        <div class="hero-skills" style="margin-top: 1rem;">
+                            <span class="skill-badge-premium">ESP32</span>
+                            <span class="skill-badge-premium">ESP-NOW</span>
+                            <span class="skill-badge-premium">C++</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card card" data-category="ai">
+                <div class="project-card-premium">
                     <div class="project-image">
-                        <i class="fas fa-map"></i>
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h3>Cadastral Map OCR System</h3>
-                    <p>Domain-specific OCR pipeline achieving 95% accuracy for extracting structured data from cadastral
-                        maps</p>
-                    <div class="project-tags">
-                        <span class="tag">EasyOCR</span>
-                        <span class="tag">OpenCV</span>
-                        <span class="tag">Python</span>
+                    <div class="project-content">
+                        <h3>Hybrid Swarm Robotics</h3>
+                        <p>Multi-robot coordination using ROS2 and Gazebo simulation for autonomous navigation</p>
+                        <div class="hero-skills" style="margin-top: 1rem;">
+                            <span class="skill-badge-premium">ROS2</span>
+                            <span class="skill-badge-premium">Gazebo</span>
+                            <span class="skill-badge-premium">Python</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-2">
+            <div style="text-align: center; margin-top: 3rem;">
                 <a href="projects.html" class="btn btn-primary">View All Projects</a>
             </div>
         </div>
     </section>
 
+    <!-- Stats Section -->
+    <section id="stats" style="padding: 60px 0;">
+        <div class="container">
+            <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Research Internships</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">IEEE Publication</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- CTA Section -->
-    <section id="cta" class="cta-section">
+    <section id="cta" style="padding: 80px 0;">
         <div class="container">
-            <div class="cta-content">
-                <h2>Let's Work Together</h2>
-                <p>
+            <div class="premium-card" style="text-align: center; padding: 4rem;">
+                <h2 style="font-family: 'Space Grotesk', sans-serif; margin-bottom: 1rem;">Let's Work Together</h2>
+                <p style="max-width: 600px; margin: 0 auto 2rem; color: rgba(255,255,255,0.7);">
                     I'm currently looking to join a team of creative engineers and innovators.
                     If you think we might be a good fit, let's connect!
                 </p>
-                <div class="cta-buttons">
+                <div class="hero-buttons" style="justify-content: center;">
                     <a href="mailto:dhesuryak@gmail.com" class="btn btn-primary">
                         <i class="fas fa-envelope"></i> Send Email
                     </a>
@@ -206,291 +360,87 @@
                         <i class="fas fa-comments"></i> Contact Page
                     </a>
                 </div>
-                <div class="cta-social">
-                    <a href="https://github.com/Dhesuryakella" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://in.linkedin.com/in/dhesuryakella" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:dhesuryak@gmail.com" class="social-link">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Scroll to Top Button -->
-    <button id="scroll-top" class="scroll-top-btn" aria-label="Scroll to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Dhesurya Kella. Built with passion and attention to detail ✨</p>
+        </div>
+    </footer>
 
+    <!-- Scripts -->
+    <script>
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
 
-    <script src="js/preloader.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/advanced-chatbot.js"></script>
-    <script src="js/theme-toggle.js"></script>
-    <script src="js/advanced-cursor.js"></script>
-    <script src="js/view-counter.js"></script>
+            // Nav scroll effect
+            const nav = document.getElementById('navbar');
+            if (scrollTop > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links-premium a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Animate elements on scroll
+        document.querySelectorAll('.premium-card, .project-card-premium, .stat-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 
 </html>
-
-<style>
-    /* Hero Section Specific Styles */
-    .hero-section {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        padding-top: 80px;
-    }
-
-    .hero-content-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 3rem;
-        max-width: 1100px;
-        margin: 0 auto;
-    }
-
-    .hero-image-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .profile-image-wrapper {
-        position: relative;
-        width: 280px;
-        height: 280px;
-        animation: float 6s ease-in-out infinite;
-    }
-
-    .profile-image {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        object-fit: cover;
-        object-position: center 20%;
-        border: 4px solid rgba(59, 130, 246, 0.5);
-        box-shadow:
-            0 10px 40px rgba(0, 0, 0, 0.4),
-            0 0 40px rgba(59, 130, 246, 0.3),
-            inset 0 0 20px rgba(0, 0, 0, 0.2);
-        transition: all 0.4s ease;
-        position: relative;
-        z-index: 2;
-    }
-
-    .profile-image:hover {
-        transform: scale(1.08);
-        border-color: rgba(59, 130, 246, 1);
-        box-shadow:
-            0 15px 60px rgba(0, 0, 0, 0.5),
-            0 0 60px rgba(59, 130, 246, 0.5);
-    }
-
-    .image-glow {
-        position: absolute;
-        top: -10px;
-        left: -10px;
-        right: -10px;
-        bottom: -10px;
-        background: radial-gradient(circle, rgba(59, 130, 246, 0.4), transparent 70%);
-        border-radius: 50%;
-        z-index: 1;
-        opacity: 0.6;
-        filter: blur(20px);
-    }
-
-    .hero-text {
-        text-align: center;
-        flex: 1;
-        max-width: 600px;
-    }
-
-    .hero-content {
-        text-align: center;
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-    .hero-greeting {
-        font-size: 1.5rem;
-        color: var(--primary);
-        margin-bottom: 0.5rem;
-    }
-
-    .hero-title {
-        margin-bottom: 1rem;
-    }
-
-    .hero-subtitle {
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
-        background: var(--accent-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 1.5rem;
-    }
-
-    .hero-description {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        max-width: 700px;
-        margin: 0 auto 2rem;
-        color: var(--text-muted);
-    }
-
-    .hero-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-bottom: 2rem;
-    }
-
-    .social-links {
-        display: flex;
-        gap: 1.5rem;
-        justify-content: center;
-        font-size: 1.5rem;
-    }
-
-    .social-links a {
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--glass-bg);
-        border: 1px solid var(--glass-border);
-        border-radius: 50%;
-        transition: var(--transition-normal);
-    }
-
-    .social-links a:hover {
-        background: var(--primary);
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-glow);
-    }
-
-    /* About Preview */
-    .about-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .about-card {
-        text-align: center;
-    }
-
-    .card-icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        background: var(--primary-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    /* Project Cards */
-    .project-card {
-        text-align: center;
-    }
-
-    .project-image {
-        height: 150px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1rem;
-    }
-
-    .project-tags {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 1rem;
-    }
-
-    .tag {
-        display: inline-block;
-        padding: 0.25rem 0.75rem;
-        background: var(--primary);
-        color: var(--text-light);
-        border-radius: 20px;
-        font-size: 0.85rem;
-        font-weight: 500;
-    }
-
-    /* CTA Section */
-    .cta-section {
-        padding: 4rem 0;
-    }
-
-    .cta-content h2 {
-        margin-bottom: 1rem;
-    }
-
-    .cta-content p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-    }
-
-    /* Scroll to Top */
-    .scroll-top-btn {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        width: 50px;
-        height: 50px;
-        background: var(--primary-gradient);
-        border: none;
-        border-radius: 50%;
-        color: var(--text-light);
-        font-size: 1.2rem;
-        cursor: pointer;
-        display: none;
-        z-index: 999;
-        box-shadow: var(--shadow-lg);
-        transition: var(--transition-normal);
-    }
-
-    .scroll-top-btn:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-glow);
-    }
-
-    @media (max-width: 768px) {
-        .hero-content-wrapper {
-            flex-direction: column;
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .hero-text {
-            text-align: center;
-        }
-
-        .profile-image-wrapper {
-            width: 220px;
-            height: 220px;
-        }
-
-        .hero-buttons {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .btn {
-            width: 100%;
-            max-width: 300px;
-        }
-    }
-</style>
