@@ -5,48 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Dhesurya Kella - Hardware-Oriented Embedded & Robotics Engineer | AI/ML | Computer Vision">
-    <meta name="keywords"
-        content="Dhesurya Kella, Embedded Systems, AI, Machine Learning, Computer Vision, Portfolio, Robotics, ESP32">
+        content="Dhesurya Kella - Electronics & Communication Engineering student specializing in Embedded Systems, AI/ML, and Computer Vision">
+    <meta name="keywords" content="Dhesurya Kella, Embedded Systems, AI, Machine Learning, Computer Vision, Portfolio">
     <meta name="author" content="Dhesurya Kella">
-    <meta name="theme-color" content="#00ff41">
+    <title>Dhesurya Kella | Portfolio</title>
 
-    <title>DK:~$ Portfolio</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/professional-layout.css">
+    <link rel="stylesheet" href="css/simple-animations.css">
+    <link rel="stylesheet" href="css/professional-theme.css">
+    <link rel="stylesheet" href="css/realistic-icons.css">
+    <link rel="stylesheet" href="css/advanced-chatbot.css">
+    <link rel="stylesheet" href="css/theme-toggle.css">
+    <link rel="stylesheet" href="css/advanced-cursor.css">
+    <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+    <link rel="stylesheet" href="css/view-counter.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Terminal Theme CSS -->
-    <link rel="stylesheet" href="css/terminal-theme.css">
 </head>
 
 <body>
-    <!-- Matrix Rain Background -->
-    <div class="matrix-bg"></div>
-    <canvas id="matrix-canvas"></canvas>
-    <div class="grid-pattern"></div>
-    <div class="scanlines"></div>
-    <div class="crt-flicker"></div>
-
-    <!-- Terminal Navigation -->
-    <nav class="terminal-nav">
+    <!-- Navigation -->
+    <nav>
         <div class="nav-container">
-            <a href="index.html" class="terminal-logo">DK_TERMINAL</a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">home</a></li>
-                <li><a href="about.html">about</a></li>
-                <li><a href="projects.html">projects</a></li>
-                <li><a href="skills.html">skills</a></li>
-                <li><a href="contact.html">contact</a></li>
+            <div class="logo">DK.</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn" id="mobileBtn" aria-label="Menu">
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -54,376 +45,452 @@
         </div>
     </nav>
 
-    <!-- Hero Section - Terminal Style -->
-    <section class="hero-terminal">
-        <div class="hero-container">
-            <!-- Main Terminal Window -->
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <span class="terminal-btn red"></span>
-                    <span class="terminal-btn yellow"></span>
-                    <span class="terminal-btn green"></span>
-                    <span class="terminal-title">dhesurya@portfolio:~</span>
-                </div>
-                <div class="terminal-body">
-                    <div class="terminal-line">
-                        <span class="prompt">dhesurya@dev:~$</span> <span class="command">cat profile.json</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="output">{</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="output"> </span><span class="string">"name"</span><span class="output">:
-                        </span><span class="string">"Dhesurya Kella"</span><span class="output">,</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="output"> </span><span class="string">"role"</span><span class="output">:
-                        </span><span class="string">"Hardware-Oriented Embedded & Robotics Engineer"</span><span
-                            class="output">,</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="output"> </span><span class="string">"education"</span><span class="output">:
-                        </span><span class="string">"B.Tech ECE @ MVGR (2022-2026)"</span><span class="output">,</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="output"> </span><span class="string">"specialization"</span><span class="output">:
-                            [</span><span class="string">"Embedded Systems"</span><span class="output">, </span><span
-                            class="string">"AI/ML"</span><span class="output">, </span><span class="string">"Computer
-                            Vision"</span><span class="output">],</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="output"> </span><span class="string">"experience"</span><span class="output">:
-                            [</span><span class="string">"IIT Tirupati"</span><span class="output">, </span><span
-                            class="string">"NITK Surathkal"</span><span class="output">],</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="output"> </span><span class="string">"publication"</span><span class="output">:
-                        </span><span class="string">"IEEE ICRM 2025"</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="output">}</span>
-                    </div>
-                    <div class="terminal-line" style="margin-top: 1rem;">
-                        <span class="prompt">dhesurya@dev:~$</span> <span class="command">./run_skills.sh</span>
-                    </div>
-                    <div class="terminal-line" style="margin-top: 0.5rem;">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Embedded C</span>
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">ESP32</span>
-                        <span class="skill-tag">ROS2</span>
-                        <span class="skill-tag">YOLOv8</span>
-                        <span class="skill-tag">OpenCV</span>
-                        <span class="skill-tag">TensorFlow</span>
-                    </div>
-                    <div class="terminal-line" style="margin-top: 1.5rem;">
-                        <span class="prompt">dhesurya@dev:~$</span> <span class="cursor"></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Action Buttons -->
-            <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
-                <a href="projects.html" class="btn-terminal btn-primary-terminal">view_projects</a>
-                <a href="contact.html" class="btn-terminal btn-secondary-terminal">contact_me</a>
-                <a href="https://github.com/Dhesuryakella" target="_blank" class="btn-terminal btn-secondary-terminal">
-                    <i class="fab fa-github"></i> github
-                </a>
-                <a href="https://linkedin.com/in/dhesuryakella" target="_blank"
-                    class="btn-terminal btn-secondary-terminal">
-                    <i class="fab fa-linkedin"></i> linkedin
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section" id="about">
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">ABOUT_ME</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="grid-3">
-                <div class="terminal-card">
-                    <div class="card-header">
-                        <span class="dot"></span>
-                        <span>education.sh</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Education</h3>
-                        <p class="card-text">
-                            B.Tech in Electronics and Communication Engineering<br>
-                            <span style="color: var(--neon-green);">MVGR College of Engineering</span><br>
-                            2022 - 2026 | Vizianagaram, AP
-                        </p>
+            <div class="hero-content-wrapper">
+                <div class="profile-image-container fade-in">
+                    <div class="profile-image-wrapper">
+                        <img src="images/profile.jpg" alt="Dhesurya Kella">
                     </div>
                 </div>
-                <div class="terminal-card">
-                    <div class="card-header">
-                        <span class="dot"></span>
-                        <span>experience.sh</span>
+                <div class="hero-text fade-in">
+                    <span class="hero-greeting">Hi, I'm</span>
+                    <h1 class="hero-title">Dhesurya Kella</h1>
+                    <h2 class="hero-subtitle">Hardware-Oriented Embedded & Robotics Engineer</h2>
+                    <p class="hero-description">
+                        Final-year B.Tech ECE student specializing in hardware-driven system development.
+                        Building intelligent embedded systems at the intersection of electronics, sensing,
+                        communication, and control—where real-world constraints shape design.
+                    </p>
+                    <div class="skills-showcase">
+                        <span class="skill-badge-large"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-badge-large"><i class="fas fa-microchip"></i> Embedded C</span>
+                        <span class="skill-badge-large"><i class="fas fa-brain"></i> AI/ML</span>
+                        <span class="skill-badge-large"><i class="fas fa-eye"></i> Computer Vision</span>
+                        <span class="skill-badge-large"><i class="fas fa-microchip"></i> ESP32</span>
+                        <span class="skill-badge-large"><i class="fas fa-code"></i> C++</span>
                     </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Experience</h3>
-                        <p class="card-text">
-                            Research Intern @ <span style="color: var(--neon-cyan);">IIT Tirupati</span><br>
-                            Research Intern @ <span style="color: var(--neon-cyan);">NITK Surathkal</span><br>
-                            <span style="color: var(--text-muted);">// Embedded Systems & AI/ML</span>
-                        </p>
+                    <div class="hero-buttons">
+                        <a href="projects.html" class="btn btn-primary">
+                            <i class="fas fa-code"></i> View Projects
+                        </a>
+                        <a href="contact.html" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i> Get in Touch
+                        </a>
                     </div>
-                </div>
-                <div class="terminal-card">
-                    <div class="card-header">
-                        <span class="dot"></span>
-                        <span>publications.sh</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Publications</h3>
-                        <p class="card-text">
-                            <span style="color: var(--neon-pink);">IEEE Conference Paper</span><br>
-                            Communication Protocols & Vision-Based Localization<br>
-                            <span style="color: var(--neon-yellow);">ICRM 2025</span>
-                        </p>
+                    <div class="social-links">
+                        <a href="https://github.com/Dhesuryakella" target="_blank" class="social-link"
+                            aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://in.linkedin.com/in/dhesuryakella" target="_blank" class="social-link"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:dhesuryak@gmail.com" class="social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="section" id="projects">
+    <!-- Quick About Section -->
+    <section id="about-preview" class="about-preview-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">FEATURED_PROJECTS</h2>
-                <div class="section-line"></div>
+            <div class="section-title">
+                <h2>About Me</h2>
             </div>
-            <div class="grid-3">
-                <div class="terminal-card">
-                    <div class="card-header">
-                        <span class="dot"></span>
-                        <span>stampede_detection/</span>
+            <div class="about-grid">
+                <div class="about-card card fade-in-up">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Stampede Prevention System</h3>
-                        <p class="card-text">
-                            Real-time crowd analytics using YOLOv8 + ByteTrack for safety monitoring with spatiotemporal
-                            heatmaps
-                        </p>
-                        <div style="margin-top: 1rem;">
-                            <span class="skill-tag">YOLOv8</span>
-                            <span class="skill-tag">ByteTrack</span>
-                            <span class="skill-tag">OpenCV</span>
-                        </div>
-                    </div>
+                    <h3>Education</h3>
+                    <p>B.Tech in Electronics and Communication Engineering from MVGR College of Engineering (2022-2026)
+                    </p>
                 </div>
-                <div class="terminal-card">
-                    <div class="card-header">
-                        <span class="dot"></span>
-                        <span>esp32_comm/</span>
+                <div class="about-card card fade-in-up">
+                    <div class="card-icon">
+                        <i class="fas fa-briefcase"></i>
                     </div>
-                    <div class="card-body">
-                        <h3 class="card-title">ESP32 Multi-Node Communication</h3>
-                        <p class="card-text">
-                            Low-latency wireless firmware using ESP-NOW with UART debugging and performance validation
-                        </p>
-                        <div style="margin-top: 1rem;">
-                            <span class="skill-tag">ESP32</span>
-                            <span class="skill-tag">ESP-NOW</span>
-                            <span class="skill-tag">C++</span>
-                        </div>
-                    </div>
+                    <h3>Experience</h3>
+                    <p>Research internships at IIT Tirupati and NITK Surathkal, focusing on embedded systems and AI/ML
+                    </p>
                 </div>
-                <div class="terminal-card">
-                    <div class="card-header">
-                        <span class="dot"></span>
-                        <span>swarm_robotics/</span>
+                <div class="about-card card fade-in-up">
+                    <div class="card-icon">
+                        <i class="fas fa-award"></i>
                     </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Hybrid Swarm Robotics</h3>
-                        <p class="card-text">
-                            Multi-robot coordination using ROS2 and Gazebo simulation for autonomous navigation
-                        </p>
-                        <div style="margin-top: 1rem;">
-                            <span class="skill-tag">ROS2</span>
-                            <span class="skill-tag">Gazebo</span>
-                            <span class="skill-tag">Python</span>
-                        </div>
-                    </div>
+                    <h3>Publications</h3>
+                    <p>IEEE Conference paper on communication protocols and vision-based localization (ICRM 2025)</p>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="projects.html" class="btn-terminal btn-primary-terminal">view_all_projects</a>
+            <div class="text-center mt-2">
+                <a href="about.html" class="btn btn-outline">Learn More About Me</a>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="section" id="stats" style="padding: 60px 2rem;">
+    <!-- Featured Projects -->
+    <section id="featured-projects" class="featured-projects-section">
         <div class="container">
-            <div class="terminal-window" style="max-width: 900px; margin: 0 auto;">
-                <div class="terminal-header">
-                    <span class="terminal-btn red"></span>
-                    <span class="terminal-btn yellow"></span>
-                    <span class="terminal-btn green"></span>
-                    <span class="terminal-title">system_stats.sh</span>
+            <div class="section-title">
+                <h2>Featured Projects</h2>
+                <p>Some of my recent work in embedded systems and AI/ML</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="project-card card" data-category="ai">
+                    <div class="project-image">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Stampede Prevention System</h3>
+                    <p>Real-time crowd analytics using YOLOv8 and ByteTrack for safety monitoring with spatiotemporal
+                        heatmaps</p>
+                    <div class="project-tags">
+                        <span class="tag">YOLOv8</span>
+                        <span class="tag">ByteTrack</span>
+                        <span class="tag">Computer Vision</span>
+                    </div>
                 </div>
-                <div class="terminal-body">
-                    <div
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; text-align: center;">
-                        <div>
-                            <div
-                                style="font-family: var(--font-cyber); font-size: 2.5rem; color: var(--neon-green); text-shadow: var(--glow-green);">
-                                15+</div>
-                            <div style="color: var(--text-muted); font-size: 0.9rem;">projects_completed</div>
-                        </div>
-                        <div>
-                            <div
-                                style="font-family: var(--font-cyber); font-size: 2.5rem; color: var(--neon-cyan); text-shadow: var(--glow-cyan);">
-                                2</div>
-                            <div style="color: var(--text-muted); font-size: 0.9rem;">research_internships</div>
-                        </div>
-                        <div>
-                            <div
-                                style="font-family: var(--font-cyber); font-size: 2.5rem; color: var(--neon-pink); text-shadow: var(--glow-pink);">
-                                1</div>
-                            <div style="color: var(--text-muted); font-size: 0.9rem;">ieee_publication</div>
-                        </div>
-                        <div>
-                            <div style="font-family: var(--font-cyber); font-size: 2.5rem; color: var(--neon-yellow);">
-                                3+</div>
-                            <div style="color: var(--text-muted); font-size: 0.9rem;">years_experience</div>
-                        </div>
+                <div class="project-card card" data-category="embedded">
+                    <div class="project-image">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>ESP32 Multi-Node Communication</h3>
+                    <p>Low-latency wireless communication firmware using ESP-NOW with UART debugging and performance
+                        validation</p>
+                    <div class="project-tags">
+                        <span class="tag">ESP32</span>
+                        <span class="tag">Embedded C</span>
+                        <span class="tag">ESP-NOW</span>
+                    </div>
+                </div>
+                <div class="project-card card" data-category="ai">
+                    <div class="project-image">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <h3>Cadastral Map OCR System</h3>
+                    <p>Domain-specific OCR pipeline achieving 95% accuracy for extracting structured data from cadastral
+                        maps</p>
+                    <div class="project-tags">
+                        <span class="tag">EasyOCR</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">Python</span>
                     </div>
                 </div>
             </div>
+            <div class="text-center mt-2">
+                <a href="projects.html" class="btn btn-primary">View All Projects</a>
+            </div>
         </div>
     </section>
+
 
     <!-- CTA Section -->
-    <section class="section" id="cta" style="padding: 60px 2rem;">
+    <section id="cta" class="cta-section">
         <div class="container">
-            <div class="terminal-window" style="max-width: 700px; margin: 0 auto;">
-                <div class="terminal-header">
-                    <span class="terminal-btn red"></span>
-                    <span class="terminal-btn yellow"></span>
-                    <span class="terminal-btn green"></span>
-                    <span class="terminal-title">connect.sh</span>
+            <div class="cta-content">
+                <h2>Let's Work Together</h2>
+                <p>
+                    I'm currently looking to join a team of creative engineers and innovators.
+                    If you think we might be a good fit, let's connect!
+                </p>
+                <div class="cta-buttons">
+                    <a href="mailto:dhesuryak@gmail.com" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Send Email
+                    </a>
+                    <a href="contact.html" class="btn btn-outline">
+                        <i class="fas fa-comments"></i> Contact Page
+                    </a>
                 </div>
-                <div class="terminal-body" style="text-align: center;">
-                    <h2 class="glitch" data-text="LET'S CONNECT"
-                        style="font-size: 2rem; margin-bottom: 1rem; color: var(--neon-green);">LET'S CONNECT</h2>
-                    <p
-                        style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-                        Looking to join a team of creative engineers and innovators. Let's build something awesome
-                        together.
-                    </p>
-                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                        <a href="mailto:dhesuryak@gmail.com" class="btn-terminal btn-primary-terminal">
-                            <i class="fas fa-envelope"></i> send_email
-                        </a>
-                        <a href="contact.html" class="btn-terminal btn-secondary-terminal">
-                            <i class="fas fa-terminal"></i> contact_form
-                        </a>
-                    </div>
+                <div class="cta-social">
+                    <a href="https://github.com/Dhesuryakella" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://in.linkedin.com/in/dhesuryakella" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:dhesuryak@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="terminal-footer">
-        <p>
-            <span class="highlight">></span> © 2026 Dhesurya Kella |
-            <span class="highlight">Built with</span> passion & code
-            <span class="highlight">|</span> All systems operational <span class="highlight">✓</span>
-        </p>
-    </footer>
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="scroll-top-btn" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <!-- Matrix Rain Script -->
-    <script>
-        // Matrix Rain Effect
-        const canvas = document.getElementById('matrix-canvas');
-        const ctx = canvas.getContext('2d');
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF';
-        const charArray = chars.split('');
-        const fontSize = 14;
-        const columns = canvas.width / fontSize;
-        const drops = [];
-
-        for (let i = 0; i < columns; i++) {
-            drops[i] = Math.random() * -100;
-        }
-
-        function drawMatrix() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.fillStyle = '#00ff41';
-            ctx.font = fontSize + 'px monospace';
-
-            for (let i = 0; i < drops.length; i++) {
-                const char = charArray[Math.floor(Math.random() * charArray.length)];
-                ctx.fillText(char, i * fontSize, drops[i] * fontSize);
-
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-        }
-
-        setInterval(drawMatrix, 50);
-
-        // Resize handler
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-        // Mobile Menu Toggle
-        const mobileBtn = document.getElementById('mobileBtn');
-        const navLinks = document.getElementById('navLinks');
-
-        mobileBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileBtn.classList.toggle('active');
-        });
-
-        // Close menu on link click
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileBtn.classList.remove('active');
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.terminal-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.5s ease';
-            observer.observe(el);
-        });
-    </script>
+    <script src="js/preloader.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/advanced-chatbot.js"></script>
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/advanced-cursor.js"></script>
+    <script src="js/view-counter.js"></script>
 </body>
 
 </html>
+
+<style>
+    /* Hero Section Specific Styles */
+    .hero-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: 80px;
+    }
+
+    .hero-content-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .hero-image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-image-wrapper {
+        position: relative;
+        width: 280px;
+        height: 280px;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .profile-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center 20%;
+        border: 4px solid rgba(59, 130, 246, 0.5);
+        box-shadow:
+            0 10px 40px rgba(0, 0, 0, 0.4),
+            0 0 40px rgba(59, 130, 246, 0.3),
+            inset 0 0 20px rgba(0, 0, 0, 0.2);
+        transition: all 0.4s ease;
+        position: relative;
+        z-index: 2;
+    }
+
+    .profile-image:hover {
+        transform: scale(1.08);
+        border-color: rgba(59, 130, 246, 1);
+        box-shadow:
+            0 15px 60px rgba(0, 0, 0, 0.5),
+            0 0 60px rgba(59, 130, 246, 0.5);
+    }
+
+    .image-glow {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.4), transparent 70%);
+        border-radius: 50%;
+        z-index: 1;
+        opacity: 0.6;
+        filter: blur(20px);
+    }
+
+    .hero-text {
+        text-align: center;
+        flex: 1;
+        max-width: 600px;
+    }
+
+    .hero-content {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .hero-greeting {
+        font-size: 1.5rem;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        color: var(--text-muted);
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+
+    .social-links a {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 50%;
+        transition: var(--transition-normal);
+    }
+
+    .social-links a:hover {
+        background: var(--primary);
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-glow);
+    }
+
+    /* About Preview */
+    .about-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .about-card {
+        text-align: center;
+    }
+
+    .card-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* Project Cards */
+    .project-card {
+        text-align: center;
+    }
+
+    .project-image {
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .project-tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: var(--primary);
+        color: var(--text-light);
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+    /* CTA Section */
+    .cta-section {
+        padding: 4rem 0;
+    }
+
+    .cta-content h2 {
+        margin-bottom: 1rem;
+    }
+
+    .cta-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Scroll to Top */
+    .scroll-top-btn {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 50px;
+        height: 50px;
+        background: var(--primary-gradient);
+        border: none;
+        border-radius: 50%;
+        color: var(--text-light);
+        font-size: 1.2rem;
+        cursor: pointer;
+        display: none;
+        z-index: 999;
+        box-shadow: var(--shadow-lg);
+        transition: var(--transition-normal);
+    }
+
+    .scroll-top-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-glow);
+    }
+
+    @media (max-width: 768px) {
+        .hero-content-wrapper {
+            flex-direction: column;
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .hero-text {
+            text-align: center;
+        }
+
+        .profile-image-wrapper {
+            width: 220px;
+            height: 220px;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+</style>
