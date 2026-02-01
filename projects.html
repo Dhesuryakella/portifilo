@@ -62,18 +62,18 @@
             <!-- Projects Grid -->
             <div class="projects-grid">
                 <!-- AI/ML Projects -->
-                <div class="project-detail-card card fade-in-up" data-category="ai">
+                <div class="project-detail-card card fade-in-up featured-project" data-category="ai">
                     <div class="project-header">
                         <div class="project-icon ai-icon">
                             <i class="fas fa-users"></i>
                         </div>
                         <div>
                             <h3>Smart Stampede Detection & Prevention System</h3>
-                            <p class="project-subtitle">Real-Time Crowd Behavior Analytics</p>
+                            <p class="project-subtitle">Real-Time Crowd Behavior Analytics | IEEE Published</p>
                         </div>
                     </div>
                     <p class="project-description">
-                        Developed a comprehensive real-time crowd analytics system using YOLOv8 for person detection
+                        Developed a comprehensive real-time crowd analytics system using YOLOv11 for person detection
                         and ByteTrack for multi-object tracking. Designed four spatiotemporal heatmap models: position,
                         path, dwell time, and velocity for identifying bottlenecks and high-risk zones.
                     </p>
@@ -83,17 +83,21 @@
                             <li>Achieved 30-50 FPS real-time performance on aerial and surveillance videos</li>
                             <li>Implemented grid-based aggregation for hot-zone detection and flow analysis</li>
                             <li>Built privacy-preserving tracking architecture with anonymous IDs</li>
-                            <li>Developed comprehensive analytics pipeline for safety monitoring</li>
+                            <li>Published research paper in IEEE conference proceedings</li>
                         </ul>
                     </div>
                     <div class="project-tech">
-                        <span class="tech-tag">YOLOv8</span>
+                        <span class="tech-tag">YOLOv11</span>
                         <span class="tech-tag">ByteTrack</span>
                         <span class="tech-tag">OpenCV</span>
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Computer Vision</span>
                     </div>
                     <div class="project-links">
+                        <a href="https://ieeexplore.ieee.org/document/11349098" target="_blank"
+                            class="btn btn-primary btn-sm">
+                            <i class="fas fa-file-alt"></i> IEEE Paper
+                        </a>
                         <a href="https://github.com/Dhesuryakella" target="_blank" class="btn btn-outline btn-sm">
                             <i class="fab fa-github"></i> View Code
                         </a>
@@ -652,7 +656,13 @@
                             Performed simulation-driven validation using ROS 2 and Gazebo.
                         </p>
                         <div class="publication-status">
-                            <span class="status-badge">Accepted</span>
+                            <span class="status-badge published">Published</span>
+                        </div>
+                        <div class="publication-links mt-1">
+                            <a href="https://ieeexplore.ieee.org/document/11349098" target="_blank"
+                                class="btn btn-primary btn-sm">
+                                <i class="fas fa-external-link-alt"></i> View on IEEE Xplore
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -873,6 +883,14 @@
         border-radius: 20px;
         font-size: 0.85rem;
         font-weight: 600;
+    }
+
+    .status-badge.published {
+        background: linear-gradient(135deg, #00b894 0%, #00d9a6 100%);
+    }
+
+    .publication-links {
+        margin-top: 1rem;
     }
 
     @media (max-width: 768px) {
