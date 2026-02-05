@@ -167,7 +167,7 @@
                 </div>
 
                 <!-- Embedded Systems Projects -->
-                <div class="project-detail-card card fade-in-up" data-category="embedded">
+                <div class="project-detail-card card fade-in-up featured-project" data-category="embedded">
                     <div class="project-header">
                         <div class="project-icon embedded-icon">
                             <i class="fas fa-microchip"></i>
@@ -177,19 +177,15 @@
                             <p class="project-subtitle">Low-Latency Wireless Firmware</p>
                         </div>
                     </div>
-                    <p class="project-description">
-                        Developed Embedded C firmware for ESP32 nodes enabling low-latency wireless communication using
-                        ESP-NOW protocol. Implemented comprehensive UART-based logging for debugging and performance
-                        validation.
-                    </p>
-                    <div class="project-highlights">
-                        <h4>Key Achievements:</h4>
-                        <ul>
-                            <li>Debugged packet loss, synchronization errors, and timing mismatches</li>
-                            <li>Validated communication reliability through extensive testing</li>
-                            <li>Documented performance behavior and system limitations</li>
-                            <li>Optimized latency for real-time applications</li>
-                        </ul>
+                    <div class="project-pso">
+                        <p><strong>Problem:</strong> Existing wireless protocols (WiFi, BLE) had too much latency and
+                            overhead for real-time multi-robot coordination.</p>
+                        <p><strong>My Solution:</strong> Developed custom Embedded C firmware using ESP-NOW protocol for
+                            peer-to-peer communication. Implemented UART-based debugging, packet acknowledgment, and
+                            timing synchronization.</p>
+                        <p><strong>Tech:</strong> ESP32, Embedded C, ESP-NOW, UART, FreeRTOS</p>
+                        <p><strong>Outcome:</strong> Achieved &lt;10ms latency between nodes. Debugged and resolved
+                            packet loss issues. System validated for reliability through 1000+ transmission tests.</p>
                     </div>
                     <div class="project-tech">
                         <span class="tech-tag">ESP32</span>
@@ -369,34 +365,31 @@
                         </div>
                         <div>
                             <h3>Hybrid Swarm Robotics System</h3>
-                            <p class="project-subtitle">TurtleBot Leader + ESP32 Followers | NITK Surathkal Research</p>
+                            <p class="project-subtitle">NITK Surathkal Research | IEEE Published</p>
                         </div>
                     </div>
-                    <p class="project-description">
-                        Designed and implemented a hybrid swarm robotics system where a ROS-based TurtleBot acts as
-                        leader,
-                        and ESP32-based robots act as followers. The system implements leader–follower formation control
-                        with decentralized communication and vision-based localization.
-                    </p>
-                    <div class="project-highlights">
-                        <h4>Key Achievements:</h4>
-                        <ul>
-                            <li>Implemented ESP-NOW for low-latency, decentralized robot-to-robot communication</li>
-                            <li>Developed firmware logic for peer communication and motion response</li>
-                            <li>Used ArUco marker-based localization for relative positioning</li>
-                            <li>Integrated embedded hardware behavior with ROS nodes on TurtleBot</li>
-                            <li>Evaluated communication latency, inter-robot spacing accuracy, and reliability</li>
-                        </ul>
+                    <div class="project-pso">
+                        <p><strong>Problem:</strong> Coordinating multiple robots in formation without centralized
+                            control, handling real-world communication delays and localization errors.</p>
+                        <p><strong>My Solution:</strong> Designed and built a hybrid swarm system with TurtleBot (ROS)
+                            as leader and ESP32-based robots as followers. Implemented ESP-NOW for decentralized
+                            peer-to-peer communication and ArUco markers for vision-based relative positioning.</p>
+                        <p><strong>Tech:</strong> ESP32, ROS, ESP-NOW, ArUco Markers, C/C++, Python</p>
+                        <p><strong>Outcome:</strong> Published at IEEE ICRM 2025. Achieved &lt;100ms communication
+                            latency. Validated formation control accuracy and reliability through extensive testing.</p>
                     </div>
                     <div class="project-tech">
                         <span class="tech-tag">ESP32</span>
                         <span class="tech-tag">ROS</span>
                         <span class="tech-tag">ESP-NOW</span>
                         <span class="tech-tag">ArUco Markers</span>
-                        <span class="tech-tag">TurtleBot</span>
                         <span class="tech-tag">Swarm Robotics</span>
                     </div>
                     <div class="project-links">
+                        <a href="https://ieeexplore.ieee.org/document/11349098" target="_blank"
+                            class="btn btn-primary btn-sm">
+                            <i class="fas fa-file-alt"></i> IEEE Paper
+                        </a>
                         <a href="https://github.com/Dhesuryakella" target="_blank" class="btn btn-outline btn-sm">
                             <i class="fab fa-github"></i> View Code
                         </a>
